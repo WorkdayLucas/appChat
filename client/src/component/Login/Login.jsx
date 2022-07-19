@@ -1,8 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom'
 import { useLoginMutation } from "../../features/auth/authApiSlice";
 import { setCredentials } from "../../features/auth/authSlice";
+import { selectCurrentToken } from "../../features/auth/authSlice";
 
 
 function Login() {
@@ -12,8 +13,9 @@ function Login() {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const navigate = useNavigate()
+    const token = useSelector(selectCurrentToken)
 
-    const [login, { isLoading }] = useLoginMutation;
+    const [login, { isLoading }] = useLoginMutation();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -27,8 +29,8 @@ function Login() {
     const handleSummit = async (e) => {
         e.preventDefault()
         try {
-            const userData = await login({ user, pwd }).unwrap()
-            dispatch(setCredentials({ ...userData, user }))
+            const userData = await login({ email: user, password: pwd }).unwrap()
+            dispatch(setCredentials({ ...userData}))
             setUser('')
             setPwd('')
             navigate('/welcome')
@@ -42,7 +44,7 @@ function Login() {
             } else {
                 setErrMsg('Login fail')
             }
-            errRef.current.focus();
+            errRef.current?.focus();
         }
     }
 
@@ -73,6 +75,8 @@ function Login() {
                     onChange={handlePwdInput}
                     required />
 
+                <button>Log in</button>    
+
             </form>
 
         </section>
@@ -80,6 +84,7 @@ function Login() {
     )
 
     return content
+
 }
 
 export default Login

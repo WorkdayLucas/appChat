@@ -6,8 +6,11 @@ import Public from './component/Public'
 import Login from './component/Login/Login'
 import Welcome from './component/welcome/Welcome'
 import RequireAuth from './component/RequireAuth/RequireAuth'
+import { useGetUserAuthQuery } from './features/auth/authApiSlice';
+
 
 function App() {
+  useGetUserAuthQuery()
   return (
     <div className="App">
       <Routes>

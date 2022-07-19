@@ -1,6 +1,6 @@
-import { createUserInDb, findUserInDb } from '../utils/users'
+import { createUserInDb, findUserInDbByField } from '../utils/users'
 import bcrypt from "bcryptjs"
-import { generateAccessToken } from '../utils/auth'
+import { generateAccessToken, updateRefreshToken, verifyRefreshToken } from '../utils/auth'
 
 export async function createUser(req, res) {
     try {
@@ -24,7 +24,7 @@ export async function createUser(req, res) {
 export async function logUser(req, res) {
     try {
         const { email, password } = req.body
-        const user = await findUserInDb(email)
+        const user = await findUserInDbByField("email", email)
         if (user === 404) {
             return res.status(404).send({ msg: "Usuario no existe." })
         }
@@ -35,14 +35,18 @@ export async function logUser(req, res) {
         if (!isCorrectPassword) return res.status(401).send({ msg: "Contrasela incorrecta" })
 
         const accesToken = generateAccessToken(user)
+        const refreshToken = await updateRefreshToken(user)
+        res.cookie('jwt', refreshToken, { httpOnly: true, secure: true, sameSite: 'none', maxAge: 24 * 60 * 60 * 1000 })
 
         return res.status(200).json({
-            data: {
+           user: {
+                id: user.id,
                 name: user.name,
                 email: user.email,
                 role: user.role,
+                // refreshToken: user.refreshToken
             },
-            accesToken: accesToken,
+            accessToken: accesToken,
         })
 
     } catch (error) {
@@ -50,3 +54,47 @@ export async function logUser(req, res) {
         res.status(400).send(error)
     }
 }
+
+
+export const handleRefreshToken = async (req, res, next) => {
+    const cookies = req.cookies;
+    console.log("refresh")
+    console.log(cookies)
+    if (!cookies) return res.send({msg:"no llega cookie"})
+    if (!Object.keys(cookies).length || !Object.keys(cookies.jwt ? cookies.jwt : {}).length) return res.sendStatus(401) // unauthorized
+    const refreshToken = cookies.jwt;
+    try {
+        const user = await findUserInDbByField('refreshToken', refreshToken);
+        if (!user) return next({ status: 403, message: 'El usuario con ese token no existe' })
+        let newToken = verifyRefreshToken(user);
+        if (typeof newToken === 'string') res.send({ accessToken: newToken })
+        else throw newToken   // obj error {status, message}
+    } catch (error) { return next(error) }
+}
+
+export const getUserAuth = async (req, res, next) => {
+    const cookies = await req.cookies;
+    console.log("getAuth")
+    console.log(cookies)
+    if (!cookies.jwt) return res.sendStatus(401) // unauthorized
+    const refreshToken = cookies.jwt;
+    try{
+      const user = await findUserInDbByField('refreshToken',refreshToken);
+      if (!user) return next({status:404 , message:'No se encontro una sesion activa'})
+      let newToken = verifyRefreshToken(user);
+      if (typeof newToken === 'string'){
+      return res.send({
+        user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+          },
+        accessToken: newToken
+      })
+      } else throw newToken   // obj error {status, message}
+  
+    }catch(error){return next(error)}
+  }
+
+

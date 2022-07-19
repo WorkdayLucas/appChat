@@ -21,14 +21,14 @@ export async function createUserInDb(name, email, password) {
     }
 }
 
-export async function findUserInDb(email) {
+export async function findUserInDbByField(field, value) {
     try {
         const user = await User.findOne({
             include: {
                 model: Role
             },
             where:{
-                email: email
+                [field]: value
             }
         })
 
