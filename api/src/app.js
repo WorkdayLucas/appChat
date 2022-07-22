@@ -6,6 +6,8 @@ import room from "./routes/room"
 import users from "./routes/users"
 import cors from "cors"
 import cookieParser from 'cookie-parser'
+import dotenv from "dotenv"
+dotenv.config()
 
 const app = express()
 
@@ -14,7 +16,7 @@ app.use(morgan("dev"))
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.ORIGIN || "http://localhost:3000",
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization', 'authorization'],
