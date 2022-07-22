@@ -2,6 +2,7 @@ import app from './src/app'
 import sequelize from './src/db.js';
 import './src/asociations'
 import createRoles from './src/utils/roles';
+import mockData from './src/mock/mock'
 
 import './src/models/user.js'
 import './src/models/mesage.js'
@@ -13,4 +14,5 @@ sequelize.sync({force: false}).then(() => {
     app.listen(PORT)
     console.log("server listen on port", PORT)
     createRoles()
+    mockData()
 })

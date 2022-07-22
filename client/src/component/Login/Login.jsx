@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { useLoginMutation } from "../../features/auth/authApiSlice";
 import { setCredentials } from "../../features/auth/authSlice";
 import { selectCurrentToken } from "../../features/auth/authSlice";
+import { setLoginSinupRender } from "../../features/users/utilSlice";
+import './Login.css'
 
 
 function Login() {
@@ -14,6 +16,7 @@ function Login() {
     const [errMsg, setErrMsg] = useState('');
     const navigate = useNavigate()
     const token = useSelector(selectCurrentToken)
+    
 
     const [login, { isLoading }] = useLoginMutation();
     const dispatch = useDispatch();
@@ -30,10 +33,11 @@ function Login() {
         e.preventDefault()
         try {
             const userData = await login({ email: user, password: pwd }).unwrap()
-            dispatch(setCredentials({ ...userData}))
+            dispatch(setCredentials({ ...userData }))
             setUser('')
             setPwd('')
-            navigate('/welcome')
+            navigate('/main')
+            console.log(userData)
         } catch (err) {
             if (!err.response) {
                 setErrMsg('No server response')
@@ -51,35 +55,51 @@ function Login() {
     const handleUserInput = (e) => setUser(e.target.value)
     const handlePwdInput = (e) => setPwd(e.target.value)
 
-    const content = isLoading ? <h1>Loading...</h1> : (
-        <section className="login">
+    const content = isLoading ? <div></div> : (
+        <span className="login">
 
-            <h1>Login</h1>
+            <h1>Bienvenido</h1>
 
             <form onSubmit={handleSummit}>
-                <label htmlFor="username">Username:</label>
-                <input
-                    type={"text"}
-                    id="username"
-                    ref={userRef}
-                    value={user}
-                    onChange={handleUserInput}
-                    autoComplete="off" />
+                <div className="inputContainer">
+                    <span className="material-symbols-outlined">
+                        mail
+                    </span>
+                    <input
+                        className="inputLog"
+                        type={"text"}
+                        id="username"
+                        ref={userRef}
+                        value={user}
+                        onChange={handleUserInput}
+                        autoComplete="off"
+                        placeholder="Email" />
+                </div>
 
-                <label htmlFor="password">Password:</label>
-                <input
-                    type={"password"}
-                    id="password"
-                    ref={userRef}
-                    value={pwd}
-                    onChange={handlePwdInput}
-                    required />
+                <div className="inputContainer">
+                    <span className="material-symbols-outlined">
+                        lock
+                    </span>
+                    <input
+                        className="inputLog"
+                        type={"password"}
+                        id="password"
+                        ref={userRef}
+                        value={pwd}
+                        onChange={handlePwdInput}
+                        required
+                        placeholder="Password" />
 
-                <button>Log in</button>    
+                </div>
+
+
+                <button className="loginBtn">Log in</button>
+
+                <h4 className="goRegister" onClick={()=>{dispatch(setLoginSinupRender("singup"))}}>Sing up</h4>
 
             </form>
 
-        </section>
+        </span>
 
     )
 

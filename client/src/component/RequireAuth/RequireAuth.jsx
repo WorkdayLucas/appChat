@@ -12,17 +12,14 @@ function RequireAuth() {
     const location = useLocation()
      
     useEffect(()=>{
-      console.log("token requiere auth")
-      console.log(token)
     },[token])
 
-    if(loading){
-      console.log("cargando")
+    if(loading){  
       return <h1>cargando...</h1>
     }
 
   return (
-    token? <Outlet/> : <Navigate to="/login" state={{ from: location}} replace />
+    token? <Outlet/> : <Navigate to="/" state={{ from: location}} replace />
   )
 }
 

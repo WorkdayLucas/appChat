@@ -1,0 +1,27 @@
+.publicContainer {
+    height: 100vh;
+    /* background: url("../../images/public_land.png"); */
+    background: rgb(247, 247, 247);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.imgPresent {
+    background: url("../../images/red.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 450px;
+    margin: 30px;
+}
+
+.publicBody {
+    display: flex;
+}
+
+.lucasMontero {
+    display: inline;
+}

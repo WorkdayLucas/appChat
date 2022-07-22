@@ -1,10 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Layout from './component/Layout'
-import Public from './component/Public'
-import Login from './component/Login/Login'
-import Welcome from './component/welcome/Welcome'
+import Public from './component/Public/Public'
+import Main from './component/main/Main'
 import RequireAuth from './component/RequireAuth/RequireAuth'
 import { useGetUserAuthQuery } from './features/auth/authApiSlice';
 
@@ -17,11 +15,10 @@ function App() {
         <Route path="/" element={<Layout/>} >
           {/* public routes */}
           <Route index element={<Public />} />
-          <Route path="login" element={<Login />} />
 
           {/* protected routes */}
           <Route element={<RequireAuth />}>
-            <Route path="welcome" element={<Welcome />} />
+            <Route path="main" element={<Main />} />
           </Route>
         </Route>
       </Routes>

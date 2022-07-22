@@ -1,0 +1,21 @@
+.contactContainer {
+    display: flex;
+    justify-content: start;
+    padding-left: 15px;
+}
+
+.userContainer {
+    display: flex;
+    justify-content: end;
+    padding-right: 15px;
+}
+
+.contactContent {
+    display: flexbox;
+    background-size: contain;
+    background: rgb(125, 136, 138);
+}
+
+.userContent {
+    background: rgb(144, 185, 192);
+}

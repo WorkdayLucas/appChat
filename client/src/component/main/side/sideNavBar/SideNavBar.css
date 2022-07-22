@@ -1,0 +1,14 @@
+.navNar {
+    display: flex;
+    background-color: aliceblue;
+    width: 100%;
+    justify-content: left;
+    align-items: center ;
+}
+
+.navNar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 30px;
+}

@@ -7,11 +7,14 @@ export const User = sequelize.define('user', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true
+    unique: false
   },
   email: {
     type: DataTypes.STRING,
     unique: true
+  },
+  img:{
+    type: DataTypes.STRING,
   },
   password: {
     type: DataTypes.STRING

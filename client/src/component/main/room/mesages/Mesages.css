@@ -1,0 +1,7 @@
+.msgContainer {
+    height: 100%;
+}
+
+.msgContainer ul {
+    list-style: none;
+}

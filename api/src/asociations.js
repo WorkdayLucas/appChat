@@ -22,7 +22,7 @@ User.hasOne(Contact_list)
 Contact_list.belongsTo(User)
 
 User.belongsToMany(Contact_list, {through: 'UserContact_list', as:"contact"})
-Contact_list.belongsToMany(Contact_list, {through: 'UserContact_list', as:"contact"})
+Contact_list.belongsToMany(User, {through: 'UserContact_list', as:"contact"})
 
 
 export default {

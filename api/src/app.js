@@ -3,6 +3,7 @@ import morgan from "morgan"
 import mensages from "./routes/mesages"
 import auth from "./routes/auth"
 import room from "./routes/room"
+import users from "./routes/users"
 import cors from "cors"
 import cookieParser from 'cookie-parser'
 
@@ -23,6 +24,7 @@ app.use(cors({
 app.use("/api/mesages", mensages)
 app.use("/api/auth", auth)
 app.use("/api/room", room)
+app.use("/api/users", users)
 
 export default app
 

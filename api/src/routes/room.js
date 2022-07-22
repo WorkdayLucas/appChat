@@ -1,8 +1,12 @@
 import { Router } from "express";
-import {createRoom} from "../controllers/room"
+import {createRoom, getRoom} from "../controllers/room"
+import verifyToken from "../middlewares/authJwt"
 
 const route = Router()
 
-route.post("/create", createRoom)
+
+route.get("", getRoom)
+route.post("/create", verifyToken, createRoom)
+
 
 export default route

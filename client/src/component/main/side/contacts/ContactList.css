@@ -1,0 +1,14 @@
+.ContactList {
+    list-style: none;
+    overflow: scroll;
+    overflow-x: auto;
+    margin-bottom: 0;
+} 
+
+.ContactList button {
+    position: relative;
+} 
+
+.ContactList li:hover{
+    background: rgb(25, 69, 99);
+}

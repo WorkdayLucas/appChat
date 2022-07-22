@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Open+Sans:ital,wght@1,300&display=swap');
+
+.PublicNavNar {
+    display: flex;
+    background-color: rgb(150, 183, 212, .75);
+    width: 100%;
+    justify-content: left;
+    align-items: center ;
+    backdrop-filter: blur(5px);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+.PublicNavNar h1{
+    font-family: 'Koulen', cursive;
+}
