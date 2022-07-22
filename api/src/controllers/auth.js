@@ -24,6 +24,9 @@ export async function createUser(req, res) {
 export async function logUser(req, res) {
     try {
         const { email, password } = req.body
+        if(!email && !password){
+            return res.status(204).send({msg:"no llegan datos"})
+        }
         const user = await findUserInDbByField("email", email)
         if (user === 404) {
             return res.status(404).send({ msg: "Usuario no existe." })
