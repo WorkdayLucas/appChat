@@ -1,5 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import {setCredentials, logOut} from '../auth/authSlice.js'
+// import dotenv from "dotenv"
+// // dotenv.config()
 
 const baseQuery = fetchBaseQuery({
     baseUrl: process.env.REACT_APP_API || "http://localhost:3001/api",
