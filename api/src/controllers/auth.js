@@ -42,7 +42,6 @@ export async function logUser(req, res) {
         res.cookie('jwt', refreshToken, { httpOnly: true, secure: true, sameSite: 'none', maxAge: 24 * 60 * 60 * 1000 })
 
         return res.status(200).json({
-            msg:"llegar llega",
             user: {
                 id: user.id,
                 name: user.name,
