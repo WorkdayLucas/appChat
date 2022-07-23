@@ -25,7 +25,8 @@ export async function logUser(req, res) {
     try {
         const { email, password } = req.body  
          if(!email && !password){
-            return res.status(204).send({msg:"no llegan datos"})
+            console.log("no llegan")
+            return res.status(200).send({msg:"no llegan datos"})
         }
         const user = await findUserInDbByField("email", email)
         if (user === 404) {
