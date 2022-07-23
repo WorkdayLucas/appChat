@@ -2,13 +2,76 @@
     display: flex;
     background-color: aliceblue;
     width: 100%;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center ;
+
 }
 
-.navNar img {
+.navBarOptions {
+    list-style: none;
+    display: flex;
+}
+
+.Icons {
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.Icons:hover {
+    background: rgb(170, 170, 170, .50);
+} 
+
+ 
+.img_name{
+    display: flex;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.img_name img {
     width: 60px;
     height: 60px;
     border-radius: 100%;
     margin-right: 30px;
+}
+
+.menuModal {
+    position: absolute;
+    width: 200px;
+    background: rgb(253, 251, 251);
+    top: 50px;
+    left: 200px;
+    z-index: 10;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+}   
+
+.menuList {
+    list-style: none;
+}
+
+.MenuHide {
+    visibility: hidden;
+}
+
+.MenuShow {
+    visibility: visible;
+}
+
+.menuListItem {
+    cursor: pointer;
+}
+
+.menuListItem:hover {
+    background: rgba(224, 221, 221, 0.5);
+}
+
+.menuActive {
+    background: rgb(170, 170, 170, .50);
 }

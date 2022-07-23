@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const utilSlice = createSlice({
   name: "util",
-  initialState: { roomToCall: "", switchToRefetchtContactList: false, LoginSinupOption: "login" },
+  initialState: { roomToCall: "", switchToRefetchtContactList: false, LoginSinupOption: "login", userListOption: "contactList" },
   reducers: {
     callRoomOption: (state, action) => {
       state.roomToCall = action.payload;
@@ -13,13 +13,17 @@ const utilSlice = createSlice({
     setLoginSinupRender: (state, action) => {
       state.LoginSinupOption = action.payload
     },
+    setUserListRender: (state, action) => {
+     state.userListOption = action.payload
+    }
     
   },
 });
 
-export const { callRoomOption, refecthContactList, setLoginSinupRender } = utilSlice.actions;
+export const { callRoomOption, refecthContactList, setLoginSinupRender, setUserListRender } = utilSlice.actions;
 export default utilSlice.reducer;
 
 export const selectRoomToCall = (state) => state.util.roomToCall;
 export const selectSwitchContactList = (state) => state.util.switchToRefetchtContactList;
 export const selectLoginSinupOption = (state) => state.util.LoginSinupOption;
+export const selectUserListOption = (state) => state.util.userListOption;
