@@ -13,7 +13,7 @@
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-.inputLog {
+.inputReg {
     border: none;
     border-bottom: solid 1px rgb(184, 191, 196);
     height: 20px;
@@ -22,19 +22,19 @@
     margin-left: 2px;
 }
 
-.inputLog:focus{
+.inputReg:focus{
     outline: none;
     background: rgb(220, 225, 226);
     transition: .5s;
 }
 
-.inputLog:hover{
+.inputReg:hover{
     border-bottom: 1px solid rgb(46, 44, 44) ;
     background: rgb(220, 225, 226);
     transition: .5s;
 }
 
-.inputContainer {
+.inputContainerReg {
     display: flex;
     margin-bottom: 20px;
     margin-left: 10px;

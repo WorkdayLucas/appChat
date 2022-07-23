@@ -36,8 +36,15 @@
 
 .inputContainer {
     display: flex;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: 50px;
     margin-left: 10px;
+}
+
+.icoField{
+    display: flex;
 }
 
 .loginBtn{
@@ -78,4 +85,20 @@
 .goRegister:active{
     color: rgba(18, 58, 94, 0.75);
     transform: scale(0.98);
+}
+
+.hidenErr {
+    visibility: hidden;
+}
+
+.showErr {
+    visibility: visible;
+}
+
+.err {
+    display: block;
+    justify-content: right;
+    color: red;
+    font-size: .8rem;
+    margin-left: 26px;
 }

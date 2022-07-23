@@ -62,12 +62,12 @@ function Register() {
 
             <h1>Registrarse</h1>
 
-            <div className="inputContainer">
+            <div className="inputContainerReg">
                 <span className="material-symbols-outlined">
                     person
                 </span>
                 <input
-                    className="inputLog"
+                    className="inputReg"
                     type={"text"}
                     id="userName"
                     ref={userRef}
@@ -79,12 +79,12 @@ function Register() {
             </div>
 
             <form onSubmit={handleSummit}>
-                <div className="inputContainer">
+                <div className="inputContainerReg">
                     <span className="material-symbols-outlined">
                         mail
                     </span>
                     <input
-                        className="inputLog"
+                        className="inputReg"
                         type={"text"}
                         id="email"
                         ref={userRef}
@@ -94,12 +94,12 @@ function Register() {
                         placeholder="Email" />
                 </div>
 
-                <div className="inputContainer">
+                <div className="inputContainerReg">
                     <span className="material-symbols-outlined">
                         lock
                     </span>
                     <input
-                        className="inputLog"
+                        className="inputReg"
                         type={"password"}
                         id="password"
                         ref={userRef}

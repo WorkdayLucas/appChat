@@ -25,8 +25,7 @@ export async function logUser(req, res) {
     try {
         const { email, password } = req.body  
          if(!email && !password){
-            console.log("no llegan")
-            return res.status(200).send({msg:"no llegan datos"})
+            return res.status(200).send({msg:"no llegan datos."})
         }
         const user = await findUserInDbByField("email", email)
         if (user === 404) {
@@ -36,7 +35,7 @@ export async function logUser(req, res) {
         // return res.status(200).json({msg:"usuario econtrado", user})
 
         const isCorrectPassword = await bcrypt.compare(password, user.password)
-        if (!isCorrectPassword) return res.status(401).send({ msg: "Contrasela incorrecta" })
+        if (!isCorrectPassword) return res.status(401).send({ msg: "Contrasela incorrecta." })
 
         const accesToken = generateAccessToken(user)
         const refreshToken = await updateRefreshToken(user)

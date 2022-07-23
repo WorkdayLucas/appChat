@@ -13,10 +13,15 @@ function Login() {
     const errRef = useRef();
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
     const navigate = useNavigate()
     const token = useSelector(selectCurrentToken)
-    
+
+    const [errVisibility, setErrVisibility] = useState("hidenErr")
+
+    const [err, setErr] = useState({
+        userErr: "Email requerido",
+        pwdErr: "Contraseña requerida",
+    });
 
     const [login, { isLoading }] = useLoginMutation();
     const dispatch = useDispatch();
@@ -25,35 +30,56 @@ function Login() {
         userRef.current.focus()
     }, [])
 
+
     useEffect(() => {
-        setErrMsg('')
+
     }, [user, pwd])
 
     const handleSummit = async (e) => {
         e.preventDefault()
         try {
-            const userData = await login({ email: user, password: pwd }).unwrap()
-            dispatch(setCredentials({ ...userData }))
-            setUser('')
-            setPwd('')
-            navigate('/main')
-            console.log(userData)
-        } catch (err) {
-            if (!err.response) {
-                setErrMsg('No server response')
-            } else if (err.response.status === 400) {
-                setErrMsg('Missing username or password')
-            } else if (err.response.status === 401) {
-                setErrMsg('Unauthorized')
+            if (err.userErr === "" && err.pwdErr === "") {
+                const userData = await login({ email: user, password: pwd }).unwrap()
+                dispatch(setCredentials({ ...userData }))
+                setUser('')
+                setPwd('')
+                navigate('/main')
             } else {
-                setErrMsg('Login fail')
+                setErrVisibility(setErrVisibility("showErr"))
+            }
+
+        } catch (error) {
+            if (error.data.msg === "Usuario no existe.") {
+                setErr({ ...err, userErr: "Email no encontrado", })
+            } else if (error.data.msg === "Contrasela incorrecta.") {
+                setErr({ ...err, pwdErr: "Contraseña incorrecta", })
+            } else {
+                setErr({ ...err, logErr: "Contraseña incorrecta", })
             }
             errRef.current?.focus();
         }
     }
 
-    const handleUserInput = (e) => setUser(e.target.value)
-    const handlePwdInput = (e) => setPwd(e.target.value)
+    const handleUserInput = (e) => {
+        if (e.target.value === "") {
+            setErr({ ...err, userErr: "Email requerido", })
+        } else if (!e.target.value.match(
+            /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+        )) {
+            setErr({ ...err, userErr: "Ingrese email valido", })
+        } else {
+            setErr({ ...err, userErr: "", })
+        }
+        setUser(e.target.value.trim())
+    }
+    const handlePwdInput = (e) => {
+        if (e.target.value === "") {
+            setErr({ ...err, pwdErr: "Contraseña requerida", })
+        } else {
+            setErr({ ...err, pwdErr: "", })
+        }
+        setPwd(e.target.value.trim())
+    }
 
     const content = isLoading ? <div></div> : (
         <span className="login">
@@ -62,43 +88,49 @@ function Login() {
 
             <form onSubmit={handleSummit}>
                 <div className="inputContainer">
-                    <span className="material-symbols-outlined">
-                        mail
-                    </span>
-                    <input
-                        className="inputLog"
-                        type={"text"}
-                        id="username"
-                        ref={userRef}
-                        value={user}
-                        onChange={handleUserInput}
-                        autoComplete="off"
-                        placeholder="Email" />
+                    <div className="icoField">
+                        <span className="material-symbols-outlined">
+                            mail
+                        </span>
+                        <input
+                            className="inputLog"
+                            type={"text"}
+                            id="username"
+                            ref={userRef}
+                            value={user}
+                            onChange={handleUserInput}
+                            autoComplete="off"
+                            placeholder="Email" />
+                    </div>
+                    <label className={`err ${err.pwdErr.includes("incorrecta") ? "showErr" : errVisibility}`}>{err.userErr}</label>
                 </div>
+
 
                 <div className="inputContainer">
-                    <span className="material-symbols-outlined">
-                        lock
-                    </span>
-                    <input
-                        className="inputLog"
-                        type={"password"}
-                        id="password"
-                        ref={userRef}
-                        value={pwd}
-                        onChange={handlePwdInput}
-                        required
-                        placeholder="Password" />
+                    <div className="icoField">
+                        <span className="material-symbols-outlined">
+                            lock
+                        </span>
+                        <input
+                            className="inputLog"
+                            type={"password"}
+                            id="password"
+                            ref={userRef}
+                            value={pwd}
+                            onChange={handlePwdInput}
+                            placeholder="Password" />
 
+                    </div>
+                    <label className={`err ${errVisibility}`}>{err.pwdErr}</label>
                 </div>
+
 
 
                 <button className="loginBtn">Log in</button>
 
-                <h4 className="goRegister" onClick={()=>{dispatch(setLoginSinupRender("singup"))}}>Sing up</h4>
+                <h4 className="goRegister" onClick={() => { dispatch(setLoginSinupRender("singup")) }}>Sing up</h4>
 
             </form>
-
         </span>
 
     )
