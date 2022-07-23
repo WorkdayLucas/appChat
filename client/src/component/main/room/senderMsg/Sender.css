@@ -1,7 +1,28 @@
-.footSender{
+.footSender {
     display: flex;
     background-color: aliceblue;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     height: 50px;
+}
+
+.footSender div {
+    display: flex;
+}
+
+.mesageInput {
+    box-sizing: border-box;
+    height: 30px;
+    width: 100vh;
+    padding: 5px;
+    border: 1px solid rgb(78, 78, 78, .30);
+}
+
+.mesageInput:focus {
+    outline: none;
+}
+
+.sendBtn {
+    background: none;
+    border: none;
 }

@@ -2,10 +2,25 @@
     display: flex;
     flex-direction: column;
     height: 80%;
+    box-shadow: inset 0px 1px 2px -1px #888, inset 0px -2px 3px -2px #888
 }
 
 .msgContainer ul {
     list-style: none;
     overflow: scroll;
     overflow-x: auto;
+
+}
+
+.msgContainer ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+.msgContainer ul::-webkit-scrollbar-track {
+    background: rgb(236, 239, 240);
+}
+
+.msgContainer ul::-webkit-scrollbar-thumb {
+    background-color: rgb(153, 153, 153);
+    border-radius: 20px;
 }

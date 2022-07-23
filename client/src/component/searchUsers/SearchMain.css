@@ -5,6 +5,18 @@
     overflow-x: auto;
 }
 
+.searchContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchContainer::-webkit-scrollbar-track {
+    background: rgb(236, 239, 240);
+}
+
+.searchContainer::-webkit-scrollbar-thumb {
+    background-color: rgb(153, 153, 153);
+    border-radius: 20px;
+}
 
 
 
