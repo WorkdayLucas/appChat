@@ -12,7 +12,7 @@ import './models/mesage.js'
 const {PORT} = process.env
 
 
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({force: false}).then(() => {
     app.listen(PORT)
     console.log("server listen on port", PORT)
     createRoles()
