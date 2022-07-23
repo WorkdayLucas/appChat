@@ -57,7 +57,7 @@ export async function findRoomFromDB(roomName, userName) {
                 id: search1.id,
                 name: roomName,
                 users: search1.users,
-                mesages: [...search1.mesages].reverse()
+                mesages: [...search1.mesages].reverser()
             }
         }
 
@@ -79,7 +79,7 @@ export async function findRoomFromDB(roomName, userName) {
                 id: search2.id,
                 name: roomName,
                 users: search2.users,
-                mesages: [...search2.mesages].reverse()
+                mesages: [...search2.mesages].reverser()
             }
         }
 
