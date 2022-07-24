@@ -5,6 +5,7 @@ import Public from './component/Public/Public'
 import Main from './component/main/Main'
 import RequireAuth from './component/RequireAuth/RequireAuth'
 import { useGetUserAuthQuery } from './features/auth/authApiSlice';
+import About from './component/Public/About/About';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout/>} >
           {/* public routes */}
           <Route index element={<Public />} />
+          <Route path='about' element={<About />}/>
 
           {/* protected routes */}
           <Route element={<RequireAuth />}>

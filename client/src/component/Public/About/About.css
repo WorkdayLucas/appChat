@@ -1,0 +1,20 @@
+.aboutContainer {
+    margin: 0;
+    background: rgb(247, 247, 247);
+    height: 100vh;
+    
+
+}
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentacion p {
+    text-align: left;
+}
