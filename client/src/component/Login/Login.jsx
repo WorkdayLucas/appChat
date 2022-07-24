@@ -49,6 +49,7 @@ function Login() {
             }
 
         } catch (error) {
+            setErrVisibility(setErrVisibility("showErr"))
             if (error.data.msg === "Usuario no existe.") {
                 setErr({ ...err, userErr: "Email no encontrado", })
             } else if (error.data.msg === "Contrasela incorrecta.") {
