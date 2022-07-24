@@ -9,10 +9,10 @@ dotenv.config()
 import './models/user.js'
 import './models/mesage.js'
 
-const {PORT} = process.env
+const {PORT, FORCE} = process.env
 
 
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: FORCE==="1"? true : false}).then(() => {
     app.listen(PORT)
     console.log("server listen on port", PORT)
     createRoles()

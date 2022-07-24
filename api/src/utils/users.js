@@ -4,14 +4,29 @@ import { Op } from 'sequelize'
 
 export async function createUserInDb(name, email, password, img) {
     try {
-        const isExistUser = await User.findOne({
+        let err = {};
+        const isEmailUsed = await User.findOne({
             where: {
                 email: email
             }
         })
 
-        if (isExistUser) {
-            return "Ya hay un usuario con este email"
+        if (isEmailUsed) {
+            err.email = "Ya existe este email"
+        }
+
+        const isUsernameUsed = await User.findOne({
+            where: {
+                name: name
+            }
+        })
+
+        if (isUsernameUsed) {
+            err.username = "Ya existe este username"
+        }
+
+        if(err.email || err.username){
+            return {err}
         }
 
         const user = await User.create({ name, email, password, roleId: 2, img })

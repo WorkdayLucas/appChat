@@ -9,8 +9,8 @@ export async function createUser(req, res) {
 
         const user = await createUserInDb(name, email, crypPassword, img)
 
-        if (user === "Ya hay un usuario con este email") {
-            return res.send({ msg: user })
+        if (user.err) {
+            return res.status(400).send(user)
         }
 
         return res.send({ msg: `Usuario creado con exito`, user })
