@@ -14,8 +14,21 @@
     display: flexbox;
     background-size: contain;
     background: rgb(125, 136, 138);
+    margin: .5px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .userContent {
     background: rgb(144, 185, 192);
+    margin: .5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.time {
+    position: relative;
+    font-size: .7rem;
+    margin-left: 8px;
+    top: 2.5px
 }

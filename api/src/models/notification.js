@@ -17,4 +17,4 @@ export const Notification = sequelize.define('notification', {
     allowNull: false,
   }
   
-}, { timestamps: false });
+}, { timestamps: true });

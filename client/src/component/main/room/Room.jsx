@@ -20,7 +20,7 @@ const Room = () => {
     console.log(data)
   }, [roomToCall])
  
-  if(data?.room) setTimeout(()=>{refetch(); console.log("escuchando..")},1100)
+  if(data?.room) setTimeout(()=>{refetch()},1100)
 
   const content = data?.room ?
     (<div className='roomContainer'>

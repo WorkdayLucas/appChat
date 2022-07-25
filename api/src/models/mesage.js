@@ -9,4 +9,9 @@ export const Mesage = sequelize.define('mesage', {
     allowNull: false,
     unique: false
   },
-}, { timestamps: false });
+  time: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false
+  },
+}, { timestamps: true });

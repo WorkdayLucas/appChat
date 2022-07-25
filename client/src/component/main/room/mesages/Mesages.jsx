@@ -11,7 +11,7 @@ const Mesages = ({mensajes}) => {
 return (
     <div className='msgContainer'>
       <ul>
-        {mensajes.map(msg=><li key={msg.id}><Mesage content={msg.content} userId={msg.userId}/></li>)}
+        {mensajes.map(msg=><li key={msg.id}><Mesage content={msg.content} userId={msg.userId} time={msg.time}/></li>)}
       </ul>
     </div>
   )

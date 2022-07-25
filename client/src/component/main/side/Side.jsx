@@ -21,7 +21,7 @@ const Side = () => {
 
   const {data, refetch} = useGetNotificationsQuery(user.id)
  
-  setTimeout(()=>{refetch(); console.log("escuchando notificaciones..")},1200)
+  setTimeout(()=>{refetch();},1200)
 
   return (
     <div className='SideContainer'>

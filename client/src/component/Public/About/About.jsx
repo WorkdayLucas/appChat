@@ -12,10 +12,10 @@ const About = () => {
             <div className='presentacion'>
                 <p>Hola, mi nombre es Lucas Montero, desarrollador Full-Stack, esta es mi app de chat desarrollada por mi, el propósito es practicar y mejorar mis habilidades de desarrollo y programación.</p>
 
-                <p>Esta app cumple la función de poder conectarse con otras personas y poder conversar, nada nuevo la verdad, pero para mi fue muy emocionante y divertido desarrollar esto completamente desde cero, por ahora esta es una versión beta de prueba con funciones limitadas, por lo que sigo trabajando en mejorarla e implementar mas funcionalidades que permitan estar a la altura de cualquier otra red social.</p>
+                <p>Esta app cumple la función de poder conectarse con otras personas y poder conversar, nada nuevo la verdad, pero para mi fue muy emocionante y divertido desarrollar esto completamente desde cero, por ahora esta es una versión beta de prueba con funciones limitadas, por lo que sigo trabajando en mejorarla e implementar más funcionalidades que permitan estar a la altura de cualquier otra red social.</p>
 
                 <p>
-                    Te invito a que te crees una cuenta, aunque no te encariñes con ella, porque al ser de prueba esta version, voy a estar borrando la base de datos, cada cierto tiempo, por lo que todas las cuentas registradas se eliminaran. Puedes buscarme y agregarme como Lucas Montero y escribirme si gustas.
+                    Te invito a que te crees una cuenta, aunque no te encariñes con ella, porque al ser de prueba esta versión, voy a estar borrando la base de datos, cada cierto tiempo, por lo que todas las cuentas registradas se eliminaran. Puedes buscarme y agregarme como Lucas Montero y escribirme si gustas.
                 </p>
 
                 <p>

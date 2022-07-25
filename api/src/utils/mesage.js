@@ -4,7 +4,8 @@ const { Mesage } = models
 
 export async function postMessage(content, userId, roomId){
    try {
-    const newMesage = await Mesage.create({content:content, userId: userId, roomId:roomId})
+
+    const newMesage = await Mesage.create({content:content, userId: userId, roomId:roomId, time: Date()})
 
     return newMesage
 
