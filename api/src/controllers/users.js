@@ -1,4 +1,4 @@
-import {findUsersInDb, findcontactListInDb, addContactFromDb, findAllUsersInDb} from '../utils/users'
+import {findUsersInDb, findcontactListInDb, addContactFromDb, findAllUsersInDb, postNotificationOnDb, findNotificationInDbByUserId} from '../utils/users'
 
 export async function getUsers(req,res){
     const {search, userId} = req.query
@@ -38,3 +38,25 @@ export async function addContact(req,res){
     }
 }
 
+export async function createNotification(req,res){
+    const {userIdOrigin, userId, notificationTypeId, userNameOrigin} = req.query
+    try {
+        const newNotification = await postNotificationOnDb(userIdOrigin, userId, notificationTypeId, userNameOrigin)
+        
+        return res.status(200).send(newNotification)
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+}
+
+export async function getNotification(req,res){
+    const {userId} = req.params
+    try {
+        const notifications = await findNotificationInDbByUserId(userId)
+
+        return res.status(200).send(notifications)
+        
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+}

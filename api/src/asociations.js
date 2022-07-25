@@ -3,6 +3,8 @@ import { Mesage } from "./models/mesage";
 import { Room } from "./models/room";
 import { Contact_list } from "./models/contactsList";
 import { Role } from "./models/role";
+import { Notification } from "./models/notification";
+import { NotificationType } from "./models/notificationType";
 
 
 User.hasMany(Mesage)
@@ -10,6 +12,12 @@ Mesage.belongsTo(User)
 
 Role.hasMany(User)
 User.belongsTo(Role)
+
+User.hasMany(Notification)
+Notification.belongsTo(User)
+
+NotificationType.hasMany(Notification)
+Notification.belongsTo(NotificationType)
 
 User.belongsToMany(Room, {through: 'UserRoom'})
 Room.belongsToMany(User, {through: 'UserRoom'})
@@ -30,5 +38,7 @@ export default {
     Room,
     Mesage,
     Contact_list,
-    Role
+    Role,
+    Notification,
+    NotificationType
 }

@@ -33,7 +33,7 @@ const Sender = ({ roomId }) => {
             <div>
                 <input className='mesageInput' type={"text"} onChange={handleChange} value={input} placeholder="Escribir mensaje" onKeyDown={handleEnter}/>
                 <button className='sendBtn' onClick={handleClick}>
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         send
                     </span>
                 </button>

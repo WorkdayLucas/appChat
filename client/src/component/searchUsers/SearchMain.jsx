@@ -32,7 +32,7 @@ const SearchMain = () => {
                 {
                     data?.results ? (data.results.map((user) => <li key={user.id}>
                         <Contact img={user.img} name={user.name} />
-                        <AddContactBtn  userId={currentUser.id} contactId={user.id} />
+                        <AddContactBtn  userId={currentUser.id} contactId={user.id} userName={currentUser.name}/>
                     </li>)) : (<div>  </div>)
                 }
             </ul>

@@ -20,6 +20,21 @@ export const userApiSlice = apiSlice.injectEndpoints({
             }
         }
        }),
+       createNotification: builder.mutation({
+        query({userIdOrigin, userId, notificationTypeId, userNameOrigin}){
+            return { 
+                method: `POST`,
+                url: `/users/notification?userIdOrigin=${userIdOrigin}&userId=${userId}&notificationTypeId=${notificationTypeId}&userNameOrigin=${userNameOrigin}` 
+            }
+        }
+       }),
+       getNotifications: builder.query({
+        query(userId){
+            return{
+                url:`/users/notification/${userId}`
+            }
+        }
+       })
     })
 })
 
@@ -27,4 +42,6 @@ export const {
    useSearchUsersQuery,
    useGetContactListQuery,
    useAddToContactsMutation,
+   useCreateNotificationMutation,
+   useGetNotificationsQuery,
 } = userApiSlice

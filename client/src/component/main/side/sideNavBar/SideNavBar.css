@@ -3,7 +3,7 @@
     background-color: aliceblue;
     width: 100%;
     justify-content: space-between;
-    align-items: center ;
+    align-items: center;
 
 }
 
@@ -25,10 +25,10 @@
 
 .Icons:hover {
     background: rgb(170, 170, 170, .50);
-} 
+}
 
- 
-.img_name{
+
+.img_name {
     display: flex;
     margin-top: 5px;
     margin-left: 5px;
@@ -45,12 +45,12 @@
     position: absolute;
     width: 200px;
     background: rgb(253, 251, 251);
-    top: 50px;
-    left: 200px;
     z-index: 10;
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     border-radius: 2px;
-}   
+    margin-top: -6px;
+    margin-left: -180px;
+}
 
 .menuList {
     list-style: none;
@@ -74,4 +74,18 @@
 
 .menuActive {
     background: rgb(170, 170, 170, .50);
+}
+
+
+.notificationsLength {
+    position: absolute;
+    background-color: rgb(192, 63, 63);
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+    margin-left: 15px;
 }

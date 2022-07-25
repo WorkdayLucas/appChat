@@ -1,5 +1,5 @@
 import models from '../asociations'
-const { User, Role, Contact_list, } = models
+const { User, Role, Contact_list, Notification, NotificationType} = models
 import { Op } from 'sequelize'
 
 export async function createUserInDb(name, email, password, img) {
@@ -64,9 +64,11 @@ export async function findUsersInDb(search, userId, contacts) {
 export async function findUserInDbByField(field, value) {
     try {
         const user = await User.findOne({
-            include: {
-                model: Role
-            },
+            include: [
+                {
+                    model: Role
+                },          
+            ],
             where: {
                 [field]: value
             }
@@ -133,6 +135,26 @@ export async function findAllUsersInDb() {
 
         const result = await allUsers.map((user)=> ({ id: user.id, name: user.name, email: user.email, img:user.img })) 
         return result
+    } catch (error) {
+        return error
+    }
+}
+
+export async function postNotificationOnDb(userIdOrigin, userId, notificationTypeId, userNameOrigin) {
+    try {
+        const newNotification = await Notification.create({userIdOrigin, userNameOrigin, checked:"0", userId, notificationTypeId})
+
+        return newNotification
+    } catch (error) {
+        return error
+    }
+}
+
+export async function findNotificationInDbByUserId(userId){
+    try {
+        const notifications = Notification.findAll({where:{userId:userId}})
+
+        return notifications
     } catch (error) {
         return error
     }
