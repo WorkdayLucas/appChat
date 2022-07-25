@@ -8,7 +8,7 @@ const About = () => {
             <PublicNavBar />
             <h1>Hola!</h1>
 
-            <h3>Bienvenid@ a mi app Chai-It</h3>
+            <h3>Bienvenid@ a mi app Chat-It</h3>
             <div className='presentacion'>
                 <p>Hola, mi nombre es Lucas Montero, desarrollador Full-Stack, esta es mi app de chat desarrollada por mi, el propósito es practicar y mejorar mis habilidades de desarrollo y programación.</p>
 
