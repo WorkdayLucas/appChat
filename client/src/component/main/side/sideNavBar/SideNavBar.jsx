@@ -8,13 +8,18 @@ import { useLogOutMutation } from '../../../../features/auth/authApiSlice'
 import { useEffect } from 'react'
 
 
-const SideNavBar = ({notificationsLength}) => {
+const SideNavBar = ({ notificationsLength }) => {
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser)
   const usersList = useSelector(selectUserListOption)
   const [modalMenuVisibility, setMmodalMenuVisibility] = useState("MenuHide")
   const [menuActive, setMenuActive] = useState("")
   const [logOut] = useLogOutMutation()
+
+  useEffect((state) => {
+    console.log("state")
+    console.log(state)
+  }, [notificationsLength])
 
   return (
     <nav className='navNar'>
@@ -27,8 +32,8 @@ const SideNavBar = ({notificationsLength}) => {
           <span className="material-symbols-outlined">
             notifications
           </span>
-          {notificationsLength > 0 ? <div className='notificationsLength'>{notificationsLength}</div>:<div></div>}
-        </li> 
+          {notificationsLength > 0 ? <div className='notificationsLength'>{notificationsLength}</div> : <div></div>}
+        </li>
         {
           usersList === "contactList" ?
             <li className='Icons' onClick={() => { dispatch(setUserListRender("buscar")) }}>

@@ -6,6 +6,119 @@
     display: flex;
     flex-direction: column;
     background: rgb(235, 242, 243);
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 260px;
+    height: 300px;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.inputLog {
+    border: none;
+    border-bottom: solid 1px rgb(184, 191, 196);
+    height: 20px;
+    width: 210px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.inputLog:focus {
+    outline: none;
+    background: rgb(220, 225, 226);
+    transition: .5s;
+}
+
+.inputLog:hover {
+    border-bottom: 1px solid rgb(46, 44, 44);
+    background: rgb(220, 225, 226);
+    transition: .5s;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: 50px;
+    margin-left: 10px;
+}
+
+.icoField {
+    display: flex;
+}
+
+.loginBtn {
+    display: block;
+    background-color: rgba(65, 119, 167, 0.75);
+    border: none;
+    width: 100px;
+    height: 35px;
+    font-family: 'Koulen', cursive;
+    font-size: 1.3rem;
+    color: azure;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.loginBtn:hover {
+    background-color: rgba(18, 58, 94, 0.75);
+    transition: .2s;
+    cursor: pointer;
+}
+
+.loginBtn:active {
+    background-color: rgba(18, 58, 94, 0.75);
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.goRegister {
+    display: inline-block;
+    color: rgba(65, 119, 167, 0.75);
+    border-bottom: solid 1px rgb(184, 191, 196);
+    cursor: pointer;
+}
+
+.goRegister:hover {
+    color: rgba(18, 58, 94, 0.75);
+}
+
+.goRegister:active {
+    color: rgba(18, 58, 94, 0.75);
+    transform: scale(0.98);
+}
+
+.hidenErr {
+    visibility: hidden;
+}
+
+.showErr {
+    visibility: visible;
+}
+
+.err {
+    display: block;
+    justify-content: right;
+    color: red;
+    font-size: .8rem;
+    margin-left: 26px;
+}
+
+
+
+
+
+
+
+
+
+
+/* .login {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 242, 243);
     top: 60px;
     right: -120px;
     width: 260px;
@@ -102,4 +215,4 @@
     color: red;
     font-size: .8rem;
     margin-left: 26px;
-}
+} */

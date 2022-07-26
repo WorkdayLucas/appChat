@@ -6,8 +6,9 @@
     display: flex;
     flex-direction: column;
     background: rgb(235, 242, 243);
-    top: 60px;
-    right: -120px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 260px;
     height: 350px;
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
@@ -89,8 +90,9 @@
     display: flex;
     flex-direction: column;
     background: rgb(235, 242, 243);
-    top: 60px;
-    right: -120px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 260px;
     height: 115px;
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);

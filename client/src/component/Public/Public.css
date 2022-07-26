@@ -1,7 +1,68 @@
 .publicContainer {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     /* background: url("../../images/public_land.png"); */
+    background: rgb(247, 247, 247);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.imgPresent {
+    background: url("../../images/red.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 168.65px;
+    object-fit: contain;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.publicBody {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+@media (min-width: 800px) {
+   
+    .publicContainer {
+        height: 100%;
+        width: 100%;
+        background: rgb(247, 247, 247);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+    }
+
+    .publicBody {
+        flex-direction: row;
+    }
+
+    .imgPresent {
+        background: url("../../images/red.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 800px;
+        height: 450px;
+        object-fit: contain;
+        margin: 20px;
+        margin-top: 30px;
+    }
+
+}
+
+
+/* .publicContainer {
+    height: 100vh;
+    width: 100%;
     background: rgb(247, 247, 247);
     background-position: center;
     background-repeat: no-repeat;
@@ -21,16 +82,4 @@
 
 .publicBody {
     display: flex;
-}
-
-.lucasMontero {
-}
-
-@media all and (max-width: 1440px){
-   
-.publicBody {
-
-}
-
-
-}
+} */

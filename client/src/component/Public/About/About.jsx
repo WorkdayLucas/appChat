@@ -1,8 +1,10 @@
 import React from 'react'
 import PublicNavBar from '../PublicNavBar'
 import './About.css'
+import song from '../../../song/ring.mp3'
 
 const About = () => {
+    const ring = new Audio(song)
     return (
         <div className='aboutContainer'>
             <PublicNavBar />
@@ -22,6 +24,8 @@ const About = () => {
                     Tambien te invito a visitar mis perfiles de <a href="https://www.linkedin.com/in/lucas-emanuel-montero-a293b6230/">LinkedIn</a> y de <a href="https://www.instagram.com/lucasmontero.wk/">Instagram</a>.
                 </p>
             </div>
+
+            <button onClick={()=>{ring.play()}}>play</button>
 
             <footer>
                 <p className='lucasMontero'>Lucas Montero © 2022.

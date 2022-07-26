@@ -10,6 +10,8 @@ import { selectUserListOption, setUserListRender } from '../../../features/users
 import Notifications from './notifications/Notifications'
 import { useGetNotificationsQuery } from '../../../features/users/usersApiSlice'
 import { selectCurrentUser } from '../../../features/auth/authSlice'
+import { useEffect } from 'react'
+import Ring from '../../../song/ring.mp3'
 
 const Side = () => {
 
@@ -22,6 +24,11 @@ const Side = () => {
   const {data, refetch} = useGetNotificationsQuery(user.id)
  
   setTimeout(()=>{refetch();},1200)
+
+  useEffect(()=>{
+    // const ring = new Audio(Ring)
+    // ring.play()
+  },[data])
 
   return (
     <div className='SideContainer'>
