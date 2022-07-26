@@ -8,7 +8,7 @@ const About = () => {
     return (
         <div className='aboutContainer'>
             <PublicNavBar />
-            <h1>Hola!</h1>
+            <h1 className='hello'>Hola!</h1>
 
             <h3>Bienvenid@ a mi app Chat-It</h3>
             <div className='presentacion'>
@@ -21,7 +21,7 @@ const About = () => {
                 </p>
 
                 <p>
-                    Tambien te invito a visitar mis perfiles de <a href="https://www.linkedin.com/in/lucas-emanuel-montero-a293b6230/">LinkedIn</a> y de <a href="https://www.instagram.com/lucasmontero.wk/">Instagram</a>.
+                    También te invito a visitar mis perfiles de <a href="https://www.linkedin.com/in/lucas-emanuel-montero-a293b6230/">LinkedIn</a> y de <a href="https://www.instagram.com/lucasmontero.wk/">Instagram</a>.
                 </p>
             </div>
 

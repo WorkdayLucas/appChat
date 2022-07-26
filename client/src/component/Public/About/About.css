@@ -1,20 +1,44 @@
 .aboutContainer {
     margin: 0;
     background: rgb(247, 247, 247);
-    height: 100vh;
-    
+    height: 100%;
+    background-repeat: repeat;
 
+}
+
+.hello {
+    margin-top: 30px;
+}
+
+.aboutContainer h3{
+    margin-top: 20px;
 }
 
 .presentacion {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 3rem;
+    margin-right:  3rem;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 130px;
 }
 
 .presentacion p {
     text-align: left;
+    margin-top: 20px;
+}
+
+@media (min-width: 480px){
+
+    .aboutContainer {
+        height: 100vh;
+        background: rgb(247, 247, 247);;
+    }
+
+    .presentacion {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 }
