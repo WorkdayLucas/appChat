@@ -20,12 +20,23 @@ export const roomApiSlice = apiSlice.injectEndpoints({
         createMesage: builder.mutation({
             query({content, userId, roomId}){
                 return {
-                    url: 'mesages/create',
+                    url: '/mesages/create',
                     method: 'POST',
                     body: {
                         content: content, 
                         userId: userId, 
                         roomId: roomId
+                    }
+                }
+            }
+        }),
+        updateMesage: builder.mutation({
+            query({id,set}){
+                return {
+                    url: `/mesages/update/${id}`,
+                    method: 'PUT',
+                    body: {
+                        set: set
                     }
                 }
             }
@@ -37,4 +48,5 @@ export const {
     useCreateRoomMutation,
     useGetRoomQuery,
     useCreateMesageMutation,
+    useUpdateMesageMutation,
 } = roomApiSlice

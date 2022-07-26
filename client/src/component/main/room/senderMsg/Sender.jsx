@@ -18,7 +18,6 @@ const Sender = ({ roomId }) => {
             createMesage({ content: input, userId: user.id, roomId: roomId })
             setInput("")
         }
-        // console.log({ content: input, userId: user.id, roomId: roomId })
     }
 
     const handleEnter = (e) => {

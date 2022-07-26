@@ -32,3 +32,18 @@
     margin-left: 8px;
     top: 2.5px
 }
+
+.unchecked {
+    position: relative;
+    font-size: .9em;
+    margin-left: 2px;
+    top: 5px
+}
+
+.checked {
+    position: relative;
+    color: rgb(27, 248, 248);
+    font-size: .9em;
+    margin-left: 2px;
+    top: 5px
+}

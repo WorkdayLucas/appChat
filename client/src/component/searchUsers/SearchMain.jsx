@@ -15,7 +15,6 @@ const SearchMain = () => {
     const { data, refetch } = useSearchUsersQuery({search: search || "?", userId:currentUser.id })
 
     useEffect(() => {
-        console.log("data:", data)
     }, [data])
 
 

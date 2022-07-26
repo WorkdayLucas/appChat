@@ -19,7 +19,6 @@ const AddContactBtn = ({ userId, contactId, userName }) => {
       await addToContacts({ userId, contactId }).
         then((result) => {
           if (result.data?.results?.msg?.includes("agregado a la lista de usuarios")) {
-            console.log("agregado a la lista de usuarios")
             setBtnVisibility("hide")
             createNotification({
               userIdOrigin: userId,

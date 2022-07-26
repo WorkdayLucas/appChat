@@ -25,7 +25,7 @@ export async function getRoom(req, res) {
         const room = await findRoomFromDB(roomName, userName)
 
         if(room){
-           return res.status(200).json({room:{...room, mesages:[...room.mesages]}})
+           return res.status(200).json({room:{...room, mesages:[...room.mesages,]}})
         }
 
         return res.status(404).json({ room: "room no encontrado" })

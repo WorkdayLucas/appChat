@@ -16,8 +16,6 @@ const Room = () => {
   const { data, refetch } = useGetRoomQuery({nameRoom:roomToCall, userName:user.name})
   useEffect(() => {
     refetch()
-    console.log("data")
-    console.log(data)
   }, [roomToCall])
  
   if(data?.room) setTimeout(()=>{refetch()},1100)
