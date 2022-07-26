@@ -29,9 +29,9 @@ export async function createUserInDb(name, email, password, img) {
             return {err}
         }
 
-        const user = await User.create({ name, email, password, roleId: 2, img })
+        const user = await User.create({ name: name.trim(), email, password, roleId: 2, img })
 
-        const contactsList = await Contact_list.create({ name: name, userId: user.dataValues.id })
+        const contactsList = await Contact_list.create({ name: name.trim(), userId: user.dataValues.id })
 
         return user
     } catch (error) {
