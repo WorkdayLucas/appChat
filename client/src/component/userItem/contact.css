@@ -4,6 +4,7 @@
     justify-content: left;
     align-items: center ;
     margin: 2px;
+    width: 100%;
 }
 
 .userItem img {
@@ -22,6 +23,32 @@
 .userItem:active {
     background: rgb(6, 46, 78);
     transition: .4s;
+}
+
+.userItemSearched{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.userItemSearched:hover {
+    background: rgb(147, 177, 202);
+    transition: .4s;
+}
+
+.userItemSearched_imgName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userItemSearched_imgName img {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    margin-right: 30px;
+    margin: 5px;
 }
 
 @media (min-width: 480px) {

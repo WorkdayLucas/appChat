@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Open+Sans:ital,wght@1,300&display=swap');
 
 .searchContainer {
-    overflow: scroll;
-    overflow-x: auto;
+    height: 88vh;
+}
+
+.userResult{
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
 }
 
 .searchContainer::-webkit-scrollbar {

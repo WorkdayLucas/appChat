@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../features/auth/authSlice'
 import { useSearchUsersQuery } from '../../features/users/usersApiSlice'
 import Contact from '../userItem/Contact'
+import UserSearched from '../userItem/UserSearched'
 import AddContactBtn from './button/AddContactBtn'
 import './SearchMain.css'
 
@@ -27,11 +28,10 @@ const SearchMain = () => {
     return (
         <div className='searchContainer'>
             <input type={"text"} onChange={handleChange} value={search} placeholder={"Buscar usuario..."} />
-            <ul>
+            <ul className='ContactList'>
                 {
-                    data?.results ? (data.results.map((user) => <li key={user.id}>
-                        <Contact img={user.img} name={user.name} />
-                        <AddContactBtn  userId={currentUser.id} contactId={user.id} userName={currentUser.name}/>
+                    data?.results ? (data.results.map((user) => <li key={user.id} className="userResult">
+                        <UserSearched img={user.img} name={user.name} userId={currentUser.id} contactId={user.id} userName={currentUser.name} />
                     </li>)) : (<div>  </div>)
                 }
             </ul>

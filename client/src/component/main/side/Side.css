@@ -1,7 +1,7 @@
 .SideContainer{
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -14,10 +14,11 @@
     .SideContainer{
         display: flex;
         flex-direction: column;
-        height: 60vh;
+        height: 100%;
     }
     
     .userListHide{
+        height: 87vh;
         display: block;
     }
 }  

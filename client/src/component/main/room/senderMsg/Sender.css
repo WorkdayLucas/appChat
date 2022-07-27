@@ -2,9 +2,7 @@
     display: flex;
     background-color: aliceblue;
     align-items: center;
-    height: 50px;
-    /* position: absolute;
-    bottom: 0; */
+    height: 10vh;
 }
 
 .inputContainer{
@@ -43,7 +41,7 @@
         background-color: aliceblue;
         justify-content: center;
         align-items: center;
-        height: 50px;
+        height: 8vh;
     }
     
     .footSender div {

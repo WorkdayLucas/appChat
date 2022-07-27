@@ -1,9 +1,9 @@
 .RoomNavBar {
     display: flex;
-    /* position: absolute; */
     background-color: aliceblue;
     justify-content: space-between;
     align-items: flex-start;
+    height: 12vh;
 }
 
 .romImg_Name{

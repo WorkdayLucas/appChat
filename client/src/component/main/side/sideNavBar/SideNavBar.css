@@ -4,7 +4,7 @@
     /* width: 100vh; */
     justify-content: space-between;
     align-items: flex-start;
-    height: 100px;
+    height: 12vh;
     padding-top: 5px;
 }
 
@@ -15,8 +15,7 @@
 
 .img_name {
     display: flex;
-    margin-top: 5px;
-    margin-left: 5px;
+  margin: 5px;
     align-items: flex-end;
 }
 
@@ -98,7 +97,7 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
-
+        height: 12vh;
     }
 
     .navBarOptions {
