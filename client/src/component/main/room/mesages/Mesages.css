@@ -9,7 +9,6 @@
     list-style: none;
     overflow: scroll;
     overflow-x: auto;
-
 }
 
 .msgContainer ul::-webkit-scrollbar {
@@ -23,4 +22,10 @@
 .msgContainer ul::-webkit-scrollbar-thumb {
     background-color: rgb(153, 153, 153);
     border-radius: 20px;
+}
+
+@media (min-width: 480px) {
+    .msgContainer {
+        height: 80vh;
+    }
 }

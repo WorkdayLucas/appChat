@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setRoomVisibility } from '../../../../features/users/utilSlice'
+import { setRoomVisibility, setUsersListVisibility } from '../../../../features/users/utilSlice'
 import './RoomNavBar.css'
 
 const RoomNavBar = ({ contactImg, contactName }) => {
@@ -14,7 +14,7 @@ const RoomNavBar = ({ contactImg, contactName }) => {
                 <h1>{contactName}</h1>
             </div>
             <ul className='navBarOptions'>
-                <li onClick={() => { dispatch(setRoomVisibility("hide")) }}>
+                <li onClick={() => { dispatch(setRoomVisibility("hide")); dispatch(setUsersListVisibility("show")) }}>
                     <span className="material-symbols-outlined exitRoomBtn">
                         close
                     </span>

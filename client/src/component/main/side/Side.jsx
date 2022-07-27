@@ -18,22 +18,28 @@ const Side = () => {
   // const [component, setComponent] = useState("contactList")
   const user = useSelector(selectCurrentUser)
   const component = useSelector(selectUserListOption)
-  const [logOut]=useLogOutMutation()
+  const [logOut] = useLogOutMutation()
   const dispatch = useDispatch()
 
-  const {data, refetch} = useGetNotificationsQuery(user.id)
- 
+  const { data, refetch } = useGetNotificationsQuery(user.id)
+
   // setTimeout(()=>{refetch();},1200)
 
-  useEffect(()=>{
+  useEffect(() => {
     // const ring = new Audio(Ring)
     // ring.play()
-  },[data])
+  }, [data])
 
   return (
     <div className='SideContainer'>
-        <SideNavBar notificationsLength={data?.length}/>
-        {component==="contactList"? <ContactList/> : component==="buscar"? <SearchMain/> : component==="notifications"? <Notifications notifications={data? data : []} /> : <div>nada</div>}
+      <SideNavBar notificationsLength={data?.length} />
+      <div>
+        {component === "contactList" ? <ContactList /> :
+         component === "buscar" ? <SearchMain /> :
+         component === "notifications" ? <Notifications notifications={data ? data :[]} /> :
+         <div>nada</div>}
+      </div>
+
     </div>
   )
 }

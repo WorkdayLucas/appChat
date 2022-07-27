@@ -39,6 +39,11 @@
         border-left: 1px solid rgb(36, 35, 35, .20);
         padding-left: 6px;
     }
+
+    .exitRoomBtn{
+        display: none;
+        
+    }
     
     
     
