@@ -1,5 +1,7 @@
 .roomContainer {
-    height: 80%;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
     width: 100%;
 }
 

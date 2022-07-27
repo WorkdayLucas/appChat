@@ -3,6 +3,8 @@
     background-color: aliceblue;
     align-items: center;
     height: 50px;
+    /* position: absolute;
+    bottom: 0; */
 }
 
 .inputContainer{
