@@ -29,7 +29,7 @@ const Sender = ({ roomId }) => {
 
     return (
         <div className='footSender' >
-            <div>
+            <div className='inputContainer'>
                 <input className='mesageInput' type={"text"} onChange={handleChange} value={input} placeholder="Escribir mensaje" onKeyDown={handleEnter}/>
                 <button className='sendBtn' onClick={handleClick}>
                     <span className="material-symbols-outlined">

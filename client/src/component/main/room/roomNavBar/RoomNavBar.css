@@ -1,16 +1,45 @@
 .RoomNavBar {
     display: flex;
+    /* position: absolute; */
     background-color: aliceblue;
-    justify-content: left;
-    align-items: center ;
-    /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.24); */
-    border-left: 1px solid rgb(36, 35, 35, .20);
-    padding-left: 6px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.romImg_Name{
+    display: flex;
+    margin: 5px;
+    align-items: center;
+}
+
+.exitRoomBtn{
+    margin: 10px;
+    
+}
+
+.exitRoomBtn:active {
+    background: rgb(170, 170, 170, .50);
+    border-radius: 100%;
 }
 
 .RoomNavBar img {
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    margin-right: 30px;
+    margin-right: 10px;
+}
+
+@media (min-width: 480px) {
+    .RoomNavBar {
+        display: flex;
+        background-color: aliceblue;
+        justify-content: left;
+        align-items: center ;
+        /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.24); */
+        border-left: 1px solid rgb(36, 35, 35, .20);
+        padding-left: 6px;
+    }
+    
+    
+    
 }

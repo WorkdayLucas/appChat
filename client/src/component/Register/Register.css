@@ -55,6 +55,7 @@
     color: azure;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .singUpBtn:hover{
@@ -96,6 +97,8 @@
     width: 260px;
     height: 115px;
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    padding-top: 30px;
+    box-sizing: border-box;
 }
 
 

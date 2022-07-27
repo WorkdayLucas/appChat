@@ -17,6 +17,8 @@
     display: flex;
     justify-content: left;
     align-items: center ;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .publicMenu {

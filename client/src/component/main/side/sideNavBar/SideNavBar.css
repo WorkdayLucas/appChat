@@ -1,10 +1,11 @@
 .navNar {
     display: flex;
     background-color: aliceblue;
-    width: 100%;
+    /* width: 100vh; */
     justify-content: space-between;
-    align-items: center;
-
+    align-items: flex-start;
+    height: 100px;
+    padding-top: 5px;
 }
 
 .navBarOptions {
@@ -12,33 +13,19 @@
     display: flex;
 }
 
-.Icons {
-    display: flex;
-    margin-right: 8px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-}
-
-.Icons:hover {
-    background: rgb(170, 170, 170, .50);
-}
-
-
 .img_name {
     display: flex;
     margin-top: 5px;
     margin-left: 5px;
+    align-items: flex-end;
 }
 
+
 .img_name img {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 100%;
-    margin-right: 30px;
+    margin-right: 10px;
 }
 
 .menuModal {
@@ -76,7 +63,6 @@
     background: rgb(170, 170, 170, .50);
 }
 
-
 .notificationsLength {
     position: absolute;
     background-color: rgb(192, 63, 63);
@@ -88,4 +74,114 @@
     border-radius: 100%;
     margin-bottom: 15px;
     margin-left: 15px;
+}
+
+.Icons {
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.Icons:active {
+    background: rgb(170, 170, 170, .50);
+}
+
+@media (min-width: 480px) {
+    .navNar {
+        display: flex;
+        background-color: aliceblue;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .navBarOptions {
+        list-style: none;
+        display: flex;
+    }
+
+    .Icons {
+        display: flex;
+        margin-right: 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+
+    .Icons:hover {
+        background: rgb(170, 170, 170, .50);
+    }
+
+
+    .img_name {
+        display: flex;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    .img_name img {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        margin-right: 30px;
+    }
+
+    .menuModal {
+        position: absolute;
+        width: 200px;
+        background: rgb(253, 251, 251);
+        z-index: 10;
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        border-radius: 2px;
+        margin-top: -6px;
+        margin-left: -180px;
+    }
+
+    .menuList {
+        list-style: none;
+    }
+
+    .MenuHide {
+        visibility: hidden;
+    }
+
+    .MenuShow {
+        visibility: visible;
+    }
+
+    .menuListItem {
+        cursor: pointer;
+    }
+
+    .menuListItem:hover {
+        background: rgba(224, 221, 221, 0.5);
+    }
+
+    .menuActive {
+        background: rgb(170, 170, 170, .50);
+    }
+
+
+    .notificationsLength {
+        position: absolute;
+        background-color: rgb(192, 63, 63);
+        color: aliceblue;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
+
 }

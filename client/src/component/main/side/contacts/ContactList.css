@@ -1,27 +1,33 @@
-.ContactList {
-    list-style: none;
-    overflow: scroll;
-    overflow-x: auto;
-    margin-bottom: 0;
-} 
 
-.ContactList button {
-    position: relative;
-} 
-
-.ContactList li:hover{
-    background: rgb(25, 69, 99);
-}
-
-.ContactList::-webkit-scrollbar {
-    width: 8px;
-}
-
-.ContactList::-webkit-scrollbar-track {
-    background: rgb(236, 239, 240);
-}
-
-.ContactList::-webkit-scrollbar-thumb {
-    background-color: rgb(153, 153, 153);
-    border-radius: 20px;
-}
+@media (min-width: 480px) {
+    .ContactList {
+        list-style: none;
+        overflow: scroll;
+        overflow-x: auto;
+        margin-bottom: 0;
+    } 
+    
+    .ContactList button {
+        position: relative;
+    } 
+    
+    .ContactList li:hover{
+        background: rgb(25, 69, 99);
+    }
+    
+    .ContactList::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .ContactList::-webkit-scrollbar-track {
+        background: rgb(236, 239, 240);
+    }
+    
+    .ContactList::-webkit-scrollbar-thumb {
+        background-color: rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+    
+    
+    
+}  

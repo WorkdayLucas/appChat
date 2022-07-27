@@ -7,10 +7,11 @@
 }
 
 .userItem img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 100%;
     margin-right: 30px;
+    margin: 5px;
 }
 
 .userItem:hover {
@@ -22,5 +23,13 @@
     background: rgb(6, 46, 78);
     transition: .4s;
 }
+
+@media (min-width: 480px) {
+ 
+    
+    
+   
+    
+}  
 
 

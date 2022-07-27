@@ -10,7 +10,8 @@ const utilSlice = createSlice({
     logErr: {
       userErr: "Email requerido",
       pwdErr: "Contraseña requerida"
-    }
+    },
+    roomVisibility: "show"
   },
   reducers: {
     callRoomOption: (state, action) => {
@@ -27,6 +28,9 @@ const utilSlice = createSlice({
     },
     setLogErr: (state, action) => {
       state.logErr[action.payload.field] = action.payload.err
+    },
+    setRoomVisibility: (state, action) => {
+      state.roomVisibility = action.payload
     }
 
   },
@@ -37,7 +41,8 @@ export const {
   refecthContactList,
   setLoginSinupRender,
   setUserListRender,
-  setLogErr
+  setLogErr,
+  setRoomVisibility,
 } = utilSlice.actions;
 export default utilSlice.reducer;
 
@@ -46,3 +51,4 @@ export const selectSwitchContactList = (state) => state.util.switchToRefetchtCon
 export const selectLoginSinupOption = (state) => state.util.LoginSinupOption;
 export const selectUserListOption = (state) => state.util.userListOption;
 export const selectLogErr = (state) => state.util.logErr;
+export const selectRoomVisibility = (state) => state.util.roomVisibility;

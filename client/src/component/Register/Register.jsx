@@ -100,7 +100,7 @@ function Register() {
     const content = isLoading ? <div></div> : (
         <span className="register">
 
-            <h1>Registrarse</h1>
+            <h1 className="formTitle">Registrarse</h1>
 
             <div className="inputContainerReg">
                 <div className="icoField">

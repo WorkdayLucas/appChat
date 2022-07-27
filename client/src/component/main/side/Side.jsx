@@ -23,7 +23,7 @@ const Side = () => {
 
   const {data, refetch} = useGetNotificationsQuery(user.id)
  
-  setTimeout(()=>{refetch();},1200)
+  // setTimeout(()=>{refetch();},1200)
 
   useEffect(()=>{
     // const ring = new Audio(Ring)

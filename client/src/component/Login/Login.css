@@ -59,6 +59,7 @@
     color: azure;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .loginBtn:hover {
@@ -103,6 +104,11 @@
     color: red;
     font-size: .8rem;
     margin-left: 26px;
+}
+
+.formTitle {
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 

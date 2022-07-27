@@ -85,7 +85,7 @@ function Login() {
     const content = isLoading ? <div></div> : (
         <span className="login">
 
-            <h1>Bienvenido</h1>
+            <h1 className="formTitle">Bienvenido</h1>
 
             <form onSubmit={handleSummit}>
                 <div className="inputContainer">

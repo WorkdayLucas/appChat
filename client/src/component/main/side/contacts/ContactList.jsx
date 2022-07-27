@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../../../features/auth/authSlice'
 import { useCreateRoomMutation } from '../../../../features/users/roomsApiSlice'
 import { useGetContactListQuery } from '../../../../features/users/usersApiSlice'
-import { callRoomOption, selectSwitchContactList } from '../../../../features/users/utilSlice'
+import { callRoomOption, selectSwitchContactList, setRoomVisibility } from '../../../../features/users/utilSlice'
 import Contact from '../../../userItem/Contact'
 import './ContactList.css'
 
@@ -30,7 +30,7 @@ const ContactList = () => {
                         contactId: contact.id,
                         usersId: user.id,
                         userName: user.name
-                    }).then(() => { dispatch(callRoomOption(contact.name)) })
+                    }).then(() => { dispatch(callRoomOption(contact.name)); dispatch(setRoomVisibility("show")) })
                 }}><Contact img={contact.img} name={contact.name} /></li>)}
             </ul> : (<h3>sin contactos</h3>)
 
