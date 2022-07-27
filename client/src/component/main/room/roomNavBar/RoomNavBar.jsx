@@ -14,7 +14,7 @@ const RoomNavBar = ({ contactImg, contactName }) => {
                 <h1>{contactName}</h1>
             </div>
             <ul className='navBarOptions'>
-                <li onClick={() => { dispatch(setRoomVisibility("hide")); dispatch(setUsersListVisibility("show")) }}>
+                <li onClick={() => { dispatch(setRoomVisibility("hide")); dispatch(setUsersListVisibility("")) }}>
                     <span className="material-symbols-outlined exitRoomBtn">
                         close
                     </span>

@@ -6,7 +6,7 @@ import SideNavBar from './sideNavBar/SideNavBar'
 import SearchMain from '../../searchUsers/SearchMain'
 import { useLogOutMutation } from '../../../features/auth/authApiSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUserListOption, setUserListRender } from '../../../features/users/utilSlice'
+import { selectUserListOption, selectUsersListVisibility, setUserListRender } from '../../../features/users/utilSlice'
 import Notifications from './notifications/Notifications'
 import { useGetNotificationsQuery } from '../../../features/users/usersApiSlice'
 import { selectCurrentUser } from '../../../features/auth/authSlice'
@@ -23,17 +23,20 @@ const Side = () => {
 
   const { data, refetch } = useGetNotificationsQuery(user.id)
 
-  // setTimeout(()=>{refetch();},1200)
+  const visibility = useSelector(selectUsersListVisibility)
+  setTimeout(()=>{refetch();},1200)
 
   useEffect(() => {
     // const ring = new Audio(Ring)
     // ring.play()
   }, [data])
 
+  
+
   return (
     <div className='SideContainer'>
       <SideNavBar notificationsLength={data?.length} />
-      <div>
+      <div className={visibility}>
         {component === "contactList" ? <ContactList /> :
          component === "buscar" ? <SearchMain /> :
          component === "notifications" ? <Notifications notifications={data ? data :[]} /> :

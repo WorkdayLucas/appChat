@@ -12,7 +12,7 @@ const utilSlice = createSlice({
       pwdErr: "Contraseña requerida"
     },
     roomVisibility: "show",
-    usersListVisibility : "show"
+    usersListVisibility : ""
   },
   reducers: {
     callRoomOption: (state, action) => {

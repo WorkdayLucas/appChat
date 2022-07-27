@@ -18,7 +18,7 @@ const Room = () => {
     refetch()
   }, [roomToCall])
  
-  // if(data?.room) setTimeout(()=>{refetch()},1100)
+  if(data?.room) setTimeout(()=>{refetch()},1100)
 
   const visibility = useSelector(selectRoomVisibility)
 

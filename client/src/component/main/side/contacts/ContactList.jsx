@@ -37,7 +37,7 @@ const ContactList = () => {
                     }).then(() => {
                         dispatch(callRoomOption(contact.name));
                         dispatch(setRoomVisibility("show"));
-                        dispatch(setUsersListVisibility("hide"))
+                        dispatch(setUsersListVisibility("userListHide"))
                     })
                 }}><Contact img={contact.img} name={contact.name} /></li>)}
             </ul> : (<h3>sin contactos</h3>)

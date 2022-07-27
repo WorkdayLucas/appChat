@@ -5,12 +5,19 @@
     width: 100%;
 }
 
+.userListHide{
+    display: none;
+}
+
 
 @media (min-width: 480px) {
     .SideContainer{
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: 60vh;
     }
     
+    .userListHide{
+        display: block;
+    }
 }  
