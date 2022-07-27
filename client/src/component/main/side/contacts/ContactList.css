@@ -1,3 +1,10 @@
+.ContactList {
+    list-style: none;
+    overflow: scroll;
+    overflow-x: auto;
+    margin-bottom: 0;
+   height: 89vh;
+} 
 
 @media (min-width: 480px) {
     .ContactList {
@@ -5,6 +12,7 @@
         overflow: scroll;
         overflow-x: auto;
         margin-bottom: 0;
+       height: 89vh;
     } 
     
     .ContactList button {
