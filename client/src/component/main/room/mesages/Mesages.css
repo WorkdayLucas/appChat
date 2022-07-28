@@ -1,7 +1,7 @@
 .msgContainer {
     display: flex;
     flex-direction: column;
-    height: 88vh;
+    height: 78vh;
     box-shadow: inset 0px 1px 2px -1px #888, inset 0px -2px 3px -2px #888;
     background: rgb(255, 255, 255);
 }
@@ -11,7 +11,7 @@
     list-style: none;
     overflow: scroll;
     overflow-x: auto;
-    height: 88vh;
+    height: 78vh;
     background: rgb(255, 255, 255);
 }
 
