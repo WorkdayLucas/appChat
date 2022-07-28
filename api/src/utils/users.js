@@ -159,3 +159,20 @@ export async function findNotificationInDbByUserId(userId){
         return error
     }
 }
+
+export async function checkNotification(notiId){
+    try {
+        const updateCheck = await Notification.update({
+           checked: "1"
+        }, {
+           where: {
+              id: notiId
+           }
+        })
+  
+        return updateCheck
+  
+     } catch (error) {
+        return error
+     }
+}

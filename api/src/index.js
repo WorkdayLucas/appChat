@@ -3,7 +3,7 @@ import sequelize from './db.js';
 import './asociations'
 import createRoles from './utils/roles';
 import createTypes from './utils/notificationsTypes';
-import mockData from './mock/mock'
+// import mockData from './mock/mock'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -18,5 +18,5 @@ sequelize.sync({force: FORCE==="1"? true : false}).then(() => {
     console.log("server listen on port", PORT)
     createRoles()
     createTypes()
-    mockData()
+    // mockData()
 })

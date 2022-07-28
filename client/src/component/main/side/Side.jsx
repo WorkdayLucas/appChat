@@ -41,7 +41,10 @@ const Side = () => {
 
   return (
     <div className='SideContainer'>
-      <SideNavBar notificationsLength={data?.length} />
+      <SideNavBar notificationsLength={(()=>{
+        const uncheckedNots = data?.filter((not)=>not.checked==="0")
+        return uncheckedNots?.length
+        })()} />
       <div className={visibility}>
         {component === "contactList" ? <ContactList /> :
          component === "buscar" ? <SearchMain /> :

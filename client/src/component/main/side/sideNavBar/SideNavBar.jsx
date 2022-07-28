@@ -15,11 +15,18 @@ const SideNavBar = ({ notificationsLength }) => {
   const [modalMenuVisibility, setMmodalMenuVisibility] = useState("MenuHide")
   const [menuActive, setMenuActive] = useState("")
   const [logOut] = useLogOutMutation()
+  const [countNotis, setContNotis] = useState(notificationsLength)
 
   useEffect((state) => {
     console.log("state")
-    console.log(state)
+    console.log(notificationsLength)
+    setContNotis(notificationsLength)
+    console.log(countNotis)
   }, [notificationsLength])
+
+  useEffect((state) => {
+    console.log(countNotis)
+  }, [countNotis])
 
   return (
     <nav className='navNar'>
@@ -32,7 +39,7 @@ const SideNavBar = ({ notificationsLength }) => {
           <span className="material-symbols-outlined">
             notifications
           </span>
-          {notificationsLength > 0 ? <div className='notificationsLength'>{notificationsLength}</div> : <div></div>}
+          {countNotis > 0 ? <div className='notificationsLength'>{countNotis}</div> : <div></div>}
         </li>
         {
           usersList === "contactList" ?

@@ -34,7 +34,19 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 url:`/users/notification/${userId}`
             }
         }
-       })
+       }),
+       updateNotifications: builder.mutation({
+        query({id,set}){
+            return {
+                url: `/users/notification/${id}`,
+                method: 'PUT',
+                body: {
+                    set: set
+                }
+            }
+        }
+    })
+
     })
 })
 
@@ -44,4 +56,5 @@ export const {
    useAddToContactsMutation,
    useCreateNotificationMutation,
    useGetNotificationsQuery,
+   useUpdateNotificationsMutation,
 } = userApiSlice
