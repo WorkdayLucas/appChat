@@ -3,7 +3,7 @@
     background-color: aliceblue;
     align-items: center;
     height: 10vh;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
