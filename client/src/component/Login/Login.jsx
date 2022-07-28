@@ -88,7 +88,7 @@ function Login() {
             <h1 className="formTitle">Bienvenido</h1>
 
             <form onSubmit={handleSummit}>
-                <div className="inputContainer">
+                <div className="inputContainerLog">
                     <div className="icoField">
                         <span className="material-symbols-outlined">
                             mail
@@ -107,7 +107,7 @@ function Login() {
                 </div>
 
 
-                <div className="inputContainer">
+                <div className="inputContainerLog">
                     <div className="icoField">
                         <span className="material-symbols-outlined">
                             lock
