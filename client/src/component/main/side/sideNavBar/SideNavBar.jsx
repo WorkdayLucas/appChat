@@ -6,6 +6,7 @@ import { selectUserListOption, setUserListRender } from '../../../../features/us
 import { useState } from 'react'
 import { useLogOutMutation } from '../../../../features/auth/authApiSlice'
 import { useEffect } from 'react'
+import Ring from '../../../../song/ring.mp3'
 
 
 const SideNavBar = ({ notificationsLength }) => {
@@ -18,10 +19,17 @@ const SideNavBar = ({ notificationsLength }) => {
   const [countNotis, setContNotis] = useState(notificationsLength)
 
   useEffect((state) => {
-    console.log("state")
-    console.log(notificationsLength)
+    console.log("notis")
+    console.log("notificationsLength",notificationsLength)
+    console.log("countNotis",countNotis)
     setContNotis(notificationsLength)
     console.log(countNotis)
+
+    if(notificationsLength>countNotis){
+      const ring = new Audio(Ring)
+      ring.play()
+    }
+
   }, [notificationsLength])
 
   useEffect((state) => {

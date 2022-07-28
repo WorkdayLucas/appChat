@@ -11,7 +11,7 @@ import Notifications from './notifications/Notifications'
 import { useGetNotificationsQuery } from '../../../features/users/usersApiSlice'
 import { selectCurrentUser } from '../../../features/auth/authSlice'
 import { useEffect } from 'react'
-import Ring from '../../../song/ring.mp3'
+
 
 const Side = () => {
 
@@ -27,17 +27,11 @@ const Side = () => {
   const visibility = useSelector(selectUsersListVisibility)
   
   useEffect(() => {
-    console.log("Escuchando notificaciones...")
+    // console.log("Escuchando notificaciones...")
     refetch()
   }, [act])
   setTimeout(()=>{setAct(act+1)},1000)
 
-  // useEffect(() => {
-  //   // const ring = new Audio(Ring)
-  //   // ring.play()
-  // }, [data])
-
-  
 
   return (
     <div className='SideContainer'>
