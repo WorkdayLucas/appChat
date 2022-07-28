@@ -20,16 +20,22 @@ const Side = () => {
   const component = useSelector(selectUserListOption)
   const [logOut] = useLogOutMutation()
   const dispatch = useDispatch()
+  const [act, setAct] = useState(0) 
 
   const { data, refetch } = useGetNotificationsQuery(user.id)
 
   const visibility = useSelector(selectUsersListVisibility)
-  setTimeout(()=>{refetch();},1200)
-
+  
   useEffect(() => {
-    // const ring = new Audio(Ring)
-    // ring.play()
-  }, [data])
+    console.log("Escuchando notificaciones...")
+    refetch()
+  }, [act])
+  setTimeout(()=>{setAct(act+1)},1000)
+
+  // useEffect(() => {
+  //   // const ring = new Audio(Ring)
+  //   // ring.play()
+  // }, [data])
 
   
 

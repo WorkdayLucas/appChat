@@ -24,6 +24,8 @@ export async function getRoom(req, res) {
         const { roomName, userName } = req.query
         const room = await findRoomFromDB(roomName, userName)
 
+        if(!roomName) return res.status(200).json({msg:"bienvenido"})
+
         if(room){
            return res.status(200).json({room:{...room, mesages:[...room.mesages,]}})
         }

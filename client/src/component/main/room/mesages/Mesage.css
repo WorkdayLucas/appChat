@@ -11,19 +11,26 @@
 }
 
 .contactContent {
-    display: flexbox;
+    display: flex;
+    flex-direction: row ;
     background-size: contain;
     background: rgb(125, 136, 138);
     margin: .5px;
     padding: 5px;
     border-radius: 5px;
+    max-width: 60%;
 }
 
 .userContent {
+    display: flex;
+    flex-direction: row ;
+    text-align: left;
+    align-items: flex-end;
     background: rgb(144, 185, 192);
     margin: .5px;
     padding: 5px;
     border-radius: 5px;
+    max-width: 60%;
 }
 
 .time {
@@ -37,7 +44,8 @@
     position: relative;
     font-size: .9em;
     margin-left: 2px;
-    top: 5px
+    top: 5px;
+    margin-bottom: 2px;
 }
 
 .checked {
@@ -45,5 +53,6 @@
     color: rgb(27, 248, 248);
     font-size: .9em;
     margin-left: 2px;
-    top: 5px
+    top: 5px;
+    margin-bottom: 2px;
 }

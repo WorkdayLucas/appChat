@@ -8,17 +8,25 @@ import RoomNavBar from './roomNavBar/RoomNavBar'
 import Sender from './senderMsg/Sender'
 import './Room.css'
 import { selectCurrentUser } from '../../../features/auth/authSlice'
+import { useState } from 'react'
 
 const Room = () => {
 
   const user = useSelector(selectCurrentUser)
   const roomToCall = useSelector(selectRoomToCall)
-  const { data, refetch } = useGetRoomQuery({nameRoom:roomToCall, userName:user.name})
+  const { data, refetch } = useGetRoomQuery({nameRoom:roomToCall, userName:user.name},{refetchOnMountOrArgChange: true})
   useEffect(() => {
     refetch()
   }, [roomToCall])
+
+  const [act, setAct] = useState(0) 
  
-  if(data?.room) setTimeout(()=>{refetch()},1100)
+
+  useEffect(() => {
+    console.log("Escuchando mensajes...")
+    refetch()
+  }, [act])
+  if(data?.room) setTimeout(()=>{setAct(act+1)},1000)
 
   const visibility = useSelector(selectRoomVisibility)
 
