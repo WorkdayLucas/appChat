@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Open+Sans:ital,wght@1,300&display=swap');
 
 .searchContainer {
-    height: 88vh;
+    height: 87vh;
 }
 
 .userResult{
     display: flex;
     justify-content: space-between;
     background-color: aliceblue;
+}
+
+.resultsList{
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 0;
+    height: 80vh;
 }
 
 .searchContainer::-webkit-scrollbar {
@@ -21,6 +29,25 @@
 .searchContainer::-webkit-scrollbar-thumb {
     background-color: rgb(153, 153, 153);
     border-radius: 20px;
+}
+
+.searchInputContainer{
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    border-top: 1px solid rgb(78, 78, 78, .30);
+    border-bottom: 1px solid rgb(78, 78, 78, .30);
+}
+
+.searchInputContainer input{
+    box-sizing: border-box;
+    height: 30px;
+    width: 80%;
+    padding: 5px;
+    border: 1px solid rgb(78, 78, 78, .30);
+    border-radius: 10px;
 }
 
 

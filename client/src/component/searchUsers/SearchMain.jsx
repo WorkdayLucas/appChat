@@ -12,8 +12,8 @@ const SearchMain = () => {
 
     const [search, setSearch] = useState("")
     const currentUser = useSelector(selectCurrentUser)
-   
-    const { data, refetch } = useSearchUsersQuery({search: search || "?", userId:currentUser.id })
+
+    const { data, refetch } = useSearchUsersQuery({ search: search || "?", userId: currentUser.id })
 
     useEffect(() => {
     }, [data])
@@ -27,8 +27,13 @@ const SearchMain = () => {
 
     return (
         <div className='searchContainer'>
-            <input type={"text"} onChange={handleChange} value={search} placeholder={"Buscar usuario..."} />
-            <ul className='ContactList'>
+            <div className="searchInputContainer">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type={"text"} onChange={handleChange} value={search} placeholder={"Buscar usuario nuevo..."} />
+            </div>
+            <ul className='resultsList'>
                 {
                     data?.results ? (data.results.map((user) => <li key={user.id} className="userResult">
                         <UserSearched img={user.img} name={user.name} userId={currentUser.id} contactId={user.id} userName={currentUser.name} />

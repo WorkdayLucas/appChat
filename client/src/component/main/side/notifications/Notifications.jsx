@@ -9,8 +9,8 @@ const Notifications = ({notifications}) => {
   console.log(notifications)
 
   return (
-    <div>
-      <ul>
+    <div className='notificationsContainer'>
+      <ul className='notificationsList'>
         {
           notifications.map((not)=><li key={not.id}><Notification not={not}/></li>)
         }

@@ -3,7 +3,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     margin-bottom: 0;
-    height: 88vh;
+    height: 87vh;
 }
 
 @media (min-width: 480px) {
@@ -12,7 +12,7 @@
         overflow: scroll;
         overflow-x: hidden;
         margin-bottom: 0;
-        height: 88vh;
+        height: 87vh;
     }
 
     .ContactList button {
