@@ -26,8 +26,6 @@ const Side = () => {
 
   const visibility = useSelector(selectUsersListVisibility)
   
-  console.log(data)
-
   useEffect(() => {
     // console.log("Escuchando notificaciones...")
     refetch()

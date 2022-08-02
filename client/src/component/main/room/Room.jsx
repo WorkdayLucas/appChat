@@ -21,8 +21,6 @@ const Room = () => {
 
   const [act, setAct] = useState(0) 
  
-  // console.log(data?.room?.users)
-
   useEffect(() => {
     // console.log("Escuchando mensajes...")
     refetch()
@@ -32,7 +30,6 @@ const Room = () => {
   const visibility = useSelector(selectRoomVisibility)
 
   useEffect(()=>{
-    console.log(visibility)
   },[visibility])
 
   const content = data?.room ?

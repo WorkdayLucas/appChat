@@ -19,11 +19,7 @@ const SideNavBar = ({ notificationsLength }) => {
   const [countNotis, setContNotis] = useState(notificationsLength)
 
   useEffect((state) => {
-    console.log("notis")
-    console.log("notificationsLength",notificationsLength)
-    console.log("countNotis",countNotis)
     setContNotis(notificationsLength)
-    console.log(countNotis)
 
     if(notificationsLength>countNotis){
       const ring = new Audio(Ring)
@@ -33,7 +29,6 @@ const SideNavBar = ({ notificationsLength }) => {
   }, [notificationsLength])
 
   useEffect((state) => {
-    console.log(countNotis)
   }, [countNotis])
 
   return (

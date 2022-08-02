@@ -19,7 +19,6 @@ const ContactList = () => {
 
     useEffect(() => {
         refetch()
-        console.log("lista de contactos actualizada")
     }, [refectContacts])
 
 
