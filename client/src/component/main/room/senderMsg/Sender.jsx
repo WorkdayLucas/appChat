@@ -3,12 +3,16 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../../../features/auth/authSlice'
 import { useCreateMesageMutation } from '../../../../features/users/roomsApiSlice'
+import { useCreateNotificationMutation } from '../../../../features/users/usersApiSlice'
+import { selectCurrentContact } from '../../../../features/users/utilSlice'
 import './Sender.css'
 
 const Sender = ({ roomId }) => {
     const user = useSelector(selectCurrentUser)
     const [input, setInput] = useState("")
     const [createMesage] = useCreateMesageMutation()
+    const [createNotification] = useCreateNotificationMutation()
+    const contactId = useSelector(selectCurrentContact)
 
     const handleChange = (e) => {
         setInput(e.target.value)
@@ -22,7 +26,17 @@ const Sender = ({ roomId }) => {
 
     const handleEnter = (e) => {
          if(e.key==="Enter" && input.trim() !== ""){
-            createMesage({ content: input, userId: user.id, roomId: roomId })
+            createMesage({ content: input, userId: user.id, roomId: roomId }).then((result)=>{
+                if(result.data.msg==="creado con exito"){
+                    createNotification({
+                        userIdOrigin: user.id,
+                        userId: contactId,
+                        notificationTypeId: 1,
+                        userNameOrigin: user.name
+                      });
+                }
+
+            })
             setInput("")
          }
     }

@@ -160,15 +160,28 @@ export async function findNotificationInDbByUserId(userId){
     }
 }
 
-export async function checkNotification(notiId){
+export async function checkNotification(notiId, type, contactId){
     try {
-        const updateCheck = await Notification.update({
-           checked: "1"
-        }, {
-           where: {
-              id: notiId
-           }
-        })
+        let updateCheck;
+        if(type===1){
+            updateCheck = await Notification.update({
+                checked: "1"
+             }, {
+                where: {
+                   notificationTypeId: type,
+                   userIdOrigin: contactId
+                }
+             })
+        }else if(type===2){
+            updateCheck = await Notification.update({
+                checked: "1"
+             }, {
+                where: {
+                   id: notiId
+                }
+             })
+        }
+        
   
         return updateCheck
   

@@ -6,7 +6,7 @@ import SideNavBar from './sideNavBar/SideNavBar'
 import SearchMain from '../../searchUsers/SearchMain'
 import { useLogOutMutation } from '../../../features/auth/authApiSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUserListOption, selectUsersListVisibility, setUserListRender } from '../../../features/users/utilSlice'
+import { getNewMesages, selectUserListOption, selectUsersListVisibility, setUserListRender } from '../../../features/users/utilSlice'
 import Notifications from './notifications/Notifications'
 import { useGetNotificationsQuery } from '../../../features/users/usersApiSlice'
 import { selectCurrentUser } from '../../../features/auth/authSlice'
@@ -26,6 +26,8 @@ const Side = () => {
 
   const visibility = useSelector(selectUsersListVisibility)
   
+  console.log(data)
+
   useEffect(() => {
     // console.log("Escuchando notificaciones...")
     refetch()
@@ -36,7 +38,9 @@ const Side = () => {
   return (
     <div className='SideContainer'>
       <SideNavBar notificationsLength={(()=>{
-        const uncheckedNots = data?.filter((not)=>not.checked==="0")
+        const uncheckedNots = data?.filter((not)=>not.checked==="0"&&not.notificationTypeId===2)
+        const uncheckedMsgs = data?.filter((msg)=>msg.checked==="0"&&msg.notificationTypeId===1)
+        dispatch(getNewMesages(uncheckedMsgs))
         return uncheckedNots?.length
         })()} />
       <div className={visibility}>

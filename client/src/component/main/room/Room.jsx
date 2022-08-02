@@ -21,9 +21,10 @@ const Room = () => {
 
   const [act, setAct] = useState(0) 
  
+  // console.log(data?.room?.users)
 
   useEffect(() => {
-    console.log("Escuchando mensajes...")
+    // console.log("Escuchando mensajes...")
     refetch()
   }, [act])
   if(data?.room) setTimeout(()=>{setAct(act+1)},1000)

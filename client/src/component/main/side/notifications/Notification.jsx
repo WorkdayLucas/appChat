@@ -8,8 +8,8 @@ const Notification = ({ not }) => {
 
   const content = not?.notificationTypeId === 2 ?
     (<div className={`notificationItem ${not.checked==="0" ? "notUnchecked" : "notChecked"}`}
-      onClick={() => { if (not.checked === "0") { updateNotifications({ id: not.id, set: "check" }) } }}>
-      {not?.userNameOrigin} te agregó.
+      onClick={() => { if (not.checked === "0") { updateNotifications({ id: not.id, type:2 , set: "check" }) } }}>
+     <span> {not?.userNameOrigin} te agregó. No verás sus mensajes a menos que l@ agregues.</span>
     </div>) :
     (<div></div>)
   return content

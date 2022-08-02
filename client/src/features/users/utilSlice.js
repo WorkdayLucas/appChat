@@ -12,7 +12,9 @@ const utilSlice = createSlice({
       pwdErr: "Contraseña requerida"
     },
     roomVisibility: "show",
-    usersListVisibility : ""
+    usersListVisibility: "",
+    currentContact: null,
+    newMesages: []
   },
   reducers: {
     callRoomOption: (state, action) => {
@@ -35,6 +37,12 @@ const utilSlice = createSlice({
     },
     setUsersListVisibility: (state, action) => {
       state.usersListVisibility = action.payload
+    },
+    getCurrentContact: (state, action) => {
+      state.currentContact = action.payload
+    },
+    getNewMesages: (state, action) => {
+      state.newMesages = action.payload
     }
 
   },
@@ -48,6 +56,8 @@ export const {
   setLogErr,
   setRoomVisibility,
   setUsersListVisibility,
+  getCurrentContact,
+  getNewMesages,
 } = utilSlice.actions;
 export default utilSlice.reducer;
 
@@ -58,3 +68,5 @@ export const selectUserListOption = (state) => state.util.userListOption;
 export const selectLogErr = (state) => state.util.logErr;
 export const selectRoomVisibility = (state) => state.util.roomVisibility;
 export const selectUsersListVisibility = (state) => state.util.usersListVisibility;
+export const selectCurrentContact = (state) => state.util.currentContact;
+export const selectNewMesages = (state) => state.util.newMesages;

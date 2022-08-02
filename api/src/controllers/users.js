@@ -63,11 +63,11 @@ export async function getNotification(req,res){
 
 export async function updateNotification(req,res) {
     const { id } = req.params
-    const { set } = req.body
+    const { set, type, contactId } = req.body
     try {
         let update;
         if (set === "check") {
-            update = await checkNotification(id)
+            update = await checkNotification(id, type, contactId)
         }
 
         return res.status(200).send(update)

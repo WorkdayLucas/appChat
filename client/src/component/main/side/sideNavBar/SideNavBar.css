@@ -15,7 +15,7 @@
 
 .img_name {
     display: flex;
-  margin: 5px;
+    margin: 5px;
     align-items: flex-end;
 }
 
@@ -125,13 +125,14 @@
         display: flex;
         margin-top: 5px;
         margin-left: 5px;
+      align-items: center;
     }
 
     .img_name img {
         width: 60px;
         height: 60px;
         border-radius: 100%;
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
     .menuModal {

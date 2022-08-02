@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCurrentUser } from '../../../../features/auth/authSlice'
 import { useCreateRoomMutation } from '../../../../features/users/roomsApiSlice'
-import { useGetContactListQuery } from '../../../../features/users/usersApiSlice'
-import { callRoomOption, selectSwitchContactList, setRoomVisibility, setUserListRender, setUsersListVisibility } from '../../../../features/users/utilSlice'
+import { useGetContactListQuery, useUpdateNotificationsMutation } from '../../../../features/users/usersApiSlice'
+import { callRoomOption, getCurrentContact, selectCurrentContact, selectSwitchContactList, setRoomVisibility, setUserListRender, setUsersListVisibility } from '../../../../features/users/utilSlice'
 import Contact from '../../../userItem/Contact'
 import './ContactList.css'
 
@@ -15,7 +15,7 @@ const ContactList = () => {
     const [createRoom] = useCreateRoomMutation()
     const dispatch = useDispatch()
     const visibility = useSelector(setUsersListVisibility)
-
+    const [updateNotifications] = useUpdateNotificationsMutation()
 
     useEffect(() => {
         refetch()
@@ -38,8 +38,10 @@ const ContactList = () => {
                         dispatch(callRoomOption(contact.name));
                         dispatch(setRoomVisibility("show"));
                         dispatch(setUsersListVisibility("userListHide"))
+                        dispatch(getCurrentContact(contact.id))
+                        updateNotifications({set:"check",type:1,contactId:contact.id})
                     })
-                }}><Contact img={contact.img} name={contact.name} /></li>)}
+                }}><Contact img={contact.img} name={contact.name} contactId={contact.id} /></li>)}
             </ul> : (<h3>sin contactos</h3>)
 
     return content
