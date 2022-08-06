@@ -12,7 +12,7 @@ export function generateAccessToken(user){
         'role':user.role,
         "id": user.id,
       }
-    }, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10m'})
+    }, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1d'})
 }
 
 export async function updateRefreshToken(user, errase = false){
