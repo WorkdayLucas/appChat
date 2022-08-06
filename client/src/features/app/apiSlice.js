@@ -17,7 +17,6 @@ const baseQuery = fetchBaseQuery({
 
 const baseQueryWithReauth = async (args,api, extraOptions) => {
     let result = await baseQuery(args, api, extraOptions)
-    console.log("baseQueryWithReauth entra")
     if(result?.error?.originalStatus === 403 || result?.error?.originalStatus === 404){
         console.log('sending refresh token')
         //send refresh token to get new acces token
