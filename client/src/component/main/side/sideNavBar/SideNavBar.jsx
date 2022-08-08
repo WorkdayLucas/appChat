@@ -76,4 +76,4 @@ const SideNavBar = ({ notificationsLength, connection }) => {
   )
 }
 
-export default SideNavBar
+export default SideNavBar 
