@@ -3,7 +3,7 @@ const { NotificationType } = models
 
 export default async function createTypes(){
 
-    const types = ["Mensaje", "Agendado"]
+    const types = ["Mensaje", "Agendado", "Coneccion"]
     let i = 0
 
 

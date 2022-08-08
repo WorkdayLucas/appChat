@@ -14,7 +14,8 @@ const utilSlice = createSlice({
     roomVisibility: "show",
     usersListVisibility: "",
     currentContact: null,
-    newMesages: []
+    newMesages: [],
+    currentContactChat : {},
   },
   reducers: {
     callRoomOption: (state, action) => {
@@ -43,8 +44,7 @@ const utilSlice = createSlice({
     },
     getNewMesages: (state, action) => {
       state.newMesages = action.payload
-    }
-
+    },
   },
 });
 
@@ -70,3 +70,4 @@ export const selectRoomVisibility = (state) => state.util.roomVisibility;
 export const selectUsersListVisibility = (state) => state.util.usersListVisibility;
 export const selectCurrentContact = (state) => state.util.currentContact;
 export const selectNewMesages = (state) => state.util.newMesages;
+

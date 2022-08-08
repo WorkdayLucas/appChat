@@ -37,7 +37,7 @@ const ContactList = () => {
                         dispatch(callRoomOption(contact.name));
                         dispatch(setRoomVisibility("show"));
                         dispatch(setUsersListVisibility("userListHide"))
-                        dispatch(getCurrentContact(contact.id))
+                        dispatch(getCurrentContact(contact))
                         updateNotifications({set:"check",type:1,contactId:contact.id})
                     })
                 }}><Contact img={contact.img} name={contact.name} contactId={contact.id} /></li>)}

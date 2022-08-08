@@ -1,4 +1,4 @@
-import {findUsersInDb, findcontactListInDb, addContactFromDb, findAllUsersInDb, postNotificationOnDb, findNotificationInDbByUserId, checkNotification} from '../utils/users'
+import {findUsersInDb, findcontactListInDb, addContactFromDb, findAllUsersInDb, postNotificationOnDb, findNotificationInDbByUserId, checkNotification, swithUserConnection, getConnectionStatusFromUser} from '../utils/users'
 
 export async function getUsers(req,res){
     const {search, userId} = req.query
@@ -70,8 +70,33 @@ export async function updateNotification(req,res) {
             update = await checkNotification(id, type, contactId)
         }
 
-        return res.status(200).send(update)
+        return res.status(200).send({msg: update})
     } catch (error) {
         return res.status(400).send(error)
     }
 }
+
+export async function updateStatusActive(req,res) {
+    const { userId } = req.params
+    const {status} = req.query
+    console.log(userId, status)
+    try {
+        
+        const update = await swithUserConnection(userId, status)
+
+        return res.status(200).send({msg: update})
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+}
+
+export async function getStatusConnection(req,res) {
+     const {userId} = req.params
+     try {
+        const connection = await getConnectionStatusFromUser(userId)
+
+        return res.status(200).send(connection)
+     } catch (error) {
+        return res.status(400).send(error)
+     }
+} 

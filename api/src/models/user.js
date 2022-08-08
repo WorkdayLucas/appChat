@@ -22,5 +22,8 @@ export const User = sequelize.define('user', {
   refreshToken: {
     type: DataTypes.STRING
   },
+  stateActive: {
+    type: DataTypes.STRING
+  }
 }, { timestamps: false });
 

@@ -48,6 +48,7 @@ export async function logUser(req, res) {
                 email: user.email,
                 img: user.img,
                 role: user.role,
+                onLine: user.stateActive,
                 // refreshToken: user.refreshToken
             },
             accessToken: accesToken,
@@ -94,6 +95,7 @@ export const getUserAuth = async (req, res, next) => {
                     email: user.email,
                     img: user.img,
                     role: user.role,
+                    onLine: user.stateActive,
                 },
                 accessToken: newToken
             })

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { setRoomVisibility, setUsersListVisibility } from '../../../../features/users/utilSlice'
 import './RoomNavBar.css'
 
-const RoomNavBar = ({ contactImg, contactName }) => {
+const RoomNavBar = ({ contactImg, contactName, connection }) => {
 
     const dispatch = useDispatch()
 
@@ -12,6 +12,7 @@ const RoomNavBar = ({ contactImg, contactName }) => {
             <div className='romImg_Name'>
                 <img src={contactImg} alt="User Avatar" />
                 <h1>{contactName}</h1>
+                <div className={`connection ${connection === "0"? "offLine" : "onLine"}`} ></div>
             </div>
             <ul className='navBarOptions'>
                 <li onClick={() => { dispatch(setRoomVisibility("hide")); dispatch(setUsersListVisibility("")) }}>
