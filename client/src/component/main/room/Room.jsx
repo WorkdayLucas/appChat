@@ -26,7 +26,6 @@ const Room = () => {
   const [act, setAct] = useState(0) 
  
   useEffect(() => {
-    // console.log("Escuchando mensajes...")
     refetch()
     if(currentContact){
       getUserConnectionStatus({userId: currentContact.id}).then((res)=>{setContacConnection(res.data.stateActive)})
