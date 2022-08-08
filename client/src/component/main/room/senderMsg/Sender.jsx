@@ -30,7 +30,7 @@ const Sender = ({ roomId }) => {
                 if(result.data.msg==="creado con exito"){
                     createNotification({
                         userIdOrigin: user.id,
-                        userId: contactId,
+                        userId: contactId.id,
                         notificationTypeId: 1,
                         userNameOrigin: user.name
                       });
