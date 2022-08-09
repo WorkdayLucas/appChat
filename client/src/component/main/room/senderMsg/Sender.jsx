@@ -39,7 +39,6 @@ const Sender = ({ roomId }) => {
          if(e.key==="Enter" && input.trim() !== ""){
             createMesage({ content: input, userId: user.id, roomId: roomId }).then((result)=>{
                 if(result.data.msg==="creado con exito"){
-                    console.log("se crea noti de mensaje")
                     createNotification({
                         userIdOrigin: user.id,
                         userId: contactId.id,

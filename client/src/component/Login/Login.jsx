@@ -32,7 +32,6 @@ function Login() {
 
 
     useEffect(() => {
-
     }, [user, pwd])
 
     const handleSummit = async (e) => {
@@ -106,7 +105,6 @@ function Login() {
                     <label className={`err ${err.pwdErr.includes("incorrecta") ? "showErr" : errVisibility}`}>{err.userErr}</label>
                 </div>
 
-
                 <div className="inputContainerLog">
                     <div className="icoField">
                         <span className="material-symbols-outlined">
@@ -125,19 +123,15 @@ function Login() {
                     <label className={`err ${errVisibility}`}>{err.pwdErr}</label>
                 </div>
 
-
-
                 <button className="loginBtn">Log in</button>
 
                 <h4 className="goRegister" onClick={() => { dispatch(setLoginSinupRender("singup")) }}>Sing up</h4>
-
             </form>
         </span>
 
     )
 
     return content
-
 }
 
 export default Login
