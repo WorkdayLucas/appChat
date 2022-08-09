@@ -36,7 +36,7 @@ const SideNavBar = ({ notificationsLength, connection }) => {
       <div className='img_name'>
         <img src={user.img} alt="User Avatar" />
         <h1>{user.name}</h1>
-        <div className={`connection ${connection === "0"? "offLine" : "onLine"}`} ></div>
+        <div className={`connectionUser ${connection === "0"? "offLine" : "onLine"}`} ></div>
       </div>
       <ul className='navBarOptions'>
         <li className='Icons notification' onClick={() => { dispatch(setUserListRender("notifications")) }}>

@@ -91,6 +91,20 @@
 }
 
 
+.connectionUser {
+    position: absolute;
+    background-color: rgb(66, 66, 66);
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-bottom: -4px;
+    margin-left: 45px;
+}
+
+
 .connection {
     position: absolute;
     background-color: rgb(66, 66, 66);
@@ -204,6 +218,10 @@
         border-radius: 100%;
         margin-bottom: 15px;
         margin-left: 15px;
+    }
+
+    .connectionUser {
+        margin-bottom: -35px;
     }
 
 }
