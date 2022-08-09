@@ -7,7 +7,7 @@ export async function createUser(req, res) {
         const { name, email, password, img } = req.body
         const crypPassword = await bcrypt.hash(password, 10)
 
-        const user = await createUserInDb(name, email, crypPassword, img)
+        const user = await createUserInDb(name, email.toLowerCase(), crypPassword, img)
 
         if (user.err) {
             return res.status(400).send(user)
@@ -27,7 +27,7 @@ export async function logUser(req, res) {
          if(!email && !password){
             return res.status(200).send({msg:"no llegan datos."})
         }
-        const user = await findUserInDbByField("email", email)
+        const user = await findUserInDbByField("email", email.toLowerCase())
         if (user === 404) {
             return res.status(404).send({ msg: "Usuario no existe." })
         }
