@@ -36,14 +36,15 @@ const Room = () => {
   const visibility = useSelector(selectRoomVisibility)
 
   useEffect(()=>{
+
   },[visibility])
 
-  const content = data?.room ?
+  const content = visibility==="show" ? (data?.room ?
     (<div className={`roomContainer ${visibility}` }>
       <RoomNavBar contactImg={data?.room.users[1].img} contactName={data?.room?.name} connection={contactConnection}/>
       <Mesages mensajes={data?.room?.mesages || []} />
       <Sender roomId={data?.room?.id}/>
-    </div>) : <div></div>
+    </div>) : <div></div>) : <div></div>
 
   return content
 }
