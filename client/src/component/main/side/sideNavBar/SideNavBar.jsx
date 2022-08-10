@@ -59,18 +59,24 @@ const SideNavBar = ({ notificationsLength, connection, setConection }) => {
             </li>
         }
         <li className="menu">
-          <span className={`material-symbols-outlined Icons ${menuActive}`} onClick={() => {
+          <span className={`material-symbols-outlined Icons ${menuActive}`} onClickCapture={() => {
             setMmodalMenuVisibility(modalMenuVisibility === "MenuShow" ? "MenuHide" : "MenuShow")
             setMenuActive(modalMenuVisibility === "MenuShow" ? "" : "menuActive")
           }}>
             menu
           </span>
+
           <div className={`menuModal ${modalMenuVisibility}`}>
             <ul className='menuList'>
               <li className='menuListItem' onClick={() => {
-                setConection({ id: user.id, status: "0" }).then((res)=>{ console.log(res); logOut()})
+                setConection({ id: user.id, status: "0" }).then((res) => { console.log(res); logOut() })
               }}>Cerrar sesión</li>
             </ul>
+          </div>
+          <div className={`menuModaBackground ${modalMenuVisibility}`} onClick={() => {
+            setMmodalMenuVisibility("MenuHide")
+            setMenuActive(modalMenuVisibility === "MenuShow" ? "" : "menuActive")
+          }}>
           </div>
         </li>
       </ul>
