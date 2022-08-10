@@ -70,7 +70,7 @@ const SideNavBar = ({ notificationsLength, connection, setConection }) => {
             <ul className='menuList'>
               <li className='menuListItem' onClick={() => {
                 setConection({ id: user.id, status: "0" }).then((res) => { console.log(res); logOut() })
-              }}>Cerrar sesión</li>
+              }}><p>Cerrar sesión</p></li>
             </ul>
           </div>
           <div className={`menuModaBackground ${modalMenuVisibility}`} onClick={() => {
