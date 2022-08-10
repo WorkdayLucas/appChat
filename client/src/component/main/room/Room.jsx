@@ -27,6 +27,7 @@ const Room = () => {
  
   useEffect(() => {
     refetch()
+    console.log(data)
     if(currentContact){
       getUserConnectionStatus({userId: currentContact.id}).then((res)=>{setContacConnection(res.data.stateActive)})
     } 

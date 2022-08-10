@@ -53,11 +53,16 @@ export async function findRoomFromDB(roomName, userName) {
         })
 
         if(search1){
+            const mensajes = [...search1.mesages].sort((x, y)=>{
+                if (x.id < y.id) { return -1; }
+                if (x.id > y.id) { return 1; }
+                return 0;
+            })
             return {
                 id: search1.id,
                 name: roomName,
                 users: search1.users,
-                mesages: [...search1.mesages].reverse()
+                mesages: mensajes,
             }
         }
 
@@ -75,11 +80,18 @@ export async function findRoomFromDB(roomName, userName) {
         })
 
         if(search2){
+
+            const mensajes = [...search2.mesages].sort((x, y)=>{
+                if (x.id < y.id) { return -1; }
+                if (x.id > y.id) { return 1; }
+                return 0;
+            })
+
             return {
                 id: search2.id,
                 name: roomName,
                 users: search2.users,
-                mesages: [...search2.mesages].reverse()
+                mesages: mensajes
             }
         }
 
