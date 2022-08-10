@@ -53,7 +53,7 @@ export async function getNotification(req,res){
     const {userId} = req.params
     try {
         const notifications = await findNotificationInDbByUserId(userId)
-
+      
         return res.status(200).send(notifications)
         
     } catch (error) {

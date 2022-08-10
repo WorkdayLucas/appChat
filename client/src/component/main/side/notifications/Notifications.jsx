@@ -6,7 +6,7 @@ import Notification from './Notification'
 const Notifications = ({notifications}) => {
 
   const user = useSelector(selectCurrentUser)
-
+ console.log(notifications)
   return (
     <div className='notificationsContainer'>
       <ul className='notificationsList'>

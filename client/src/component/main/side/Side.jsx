@@ -80,7 +80,16 @@ const Side = () => {
       <div className={visibility}>
         {component === "contactList" ? <ContactList /> :
           component === "buscar" ? <SearchMain /> :
-            component === "notifications" ? <Notifications notifications={data ? data : []} /> :
+            component === "notifications" ? <Notifications notifications={data ? 
+             ( ()=>{
+              const nots = data?.filter((not) =>not.notificationTypeId === 2)
+              console.log(nots)
+              return nots.sort((x, y)=>{
+                if (x.id < y.id) { return -1; }
+                if (x.id > y.id) { return 1; }
+                return 0;
+            }).reverse()
+            })() : []} /> :
               <div>nada</div>}
       </div>
 
