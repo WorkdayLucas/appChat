@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import Ring from '../../../../song/ring.mp3'
 
 
-const SideNavBar = ({ notificationsLength, connection }) => {
+const SideNavBar = ({ notificationsLength, connection, setConection }) => {
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser)
   const usersList = useSelector(selectUserListOption)
@@ -21,7 +21,7 @@ const SideNavBar = ({ notificationsLength, connection }) => {
   useEffect((state) => {
     setContNotis(notificationsLength)
 
-    if(notificationsLength>countNotis){
+    if (notificationsLength > countNotis) {
       const ring = new Audio(Ring)
       ring.play()
     }
@@ -36,7 +36,7 @@ const SideNavBar = ({ notificationsLength, connection }) => {
       <div className='img_name'>
         <img src={user.img} alt="User Avatar" />
         <h1>{user.name}</h1>
-        <div className={`connectionUser ${connection === "0"? "offLine" : "onLine"}`} ></div>
+        <div className={`connectionUser ${connection === "0" ? "offLine" : "onLine"}`} ></div>
       </div>
       <ul className='navBarOptions'>
         <li className='Icons notification' onClick={() => { dispatch(setUserListRender("notifications")) }}>
@@ -67,7 +67,9 @@ const SideNavBar = ({ notificationsLength, connection }) => {
           </span>
           <div className={`menuModal ${modalMenuVisibility}`}>
             <ul className='menuList'>
-              <li className='menuListItem' onClick={logOut}>Cerrar sesión</li>
+              <li className='menuListItem' onClick={() => {
+                setConection({ id: user.id, status: "0" }).then((res)=>{ console.log(res); logOut()})
+              }}>Cerrar sesión</li>
             </ul>
           </div>
         </li>

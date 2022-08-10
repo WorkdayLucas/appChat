@@ -76,7 +76,7 @@ const Side = () => {
         const uncheckedMsgs = data?.filter((msg) => msg.checked === "0" && msg.notificationTypeId === 1)
         dispatch(getNewMesages(uncheckedMsgs))
         return uncheckedNots?.length
-      })()} connection={conecctionStatus} />
+      })()} connection={conecctionStatus} setConection={updateUserConnectionStatus} />
       <div className={visibility}>
         {component === "contactList" ? <ContactList /> :
           component === "buscar" ? <SearchMain /> :
